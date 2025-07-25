@@ -3,9 +3,6 @@
 #!/bin/bash
 
 # Set the directory to search in (change this to your specific folder)
-# search_dir="/Volumes/WL-SL/02 Slickline/00 Service Quality Pack"
-# search_dir="/Volumes/WL-SL/IMS 2024"
-# search_dir="/Volumes/WL-SL/Maintenance"
 search_dir="/Volumes/WL-SL/02 Slickline/05 OEM Quality Book"
 
 # Set the output file

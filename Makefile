@@ -13,6 +13,7 @@ all: $(SUBDIRS)
 $(SUBDIRS):
 	$(MAKE) -C $@
 
+
 # Clean target for each subdirectory if you have clean rules in each Makefile
 clean:
 	for dir in $(SUBDIRS); do \
@@ -20,4 +21,3 @@ clean:
 	done
 
 .PHONY: all clean $(SUBDIRS)
-
