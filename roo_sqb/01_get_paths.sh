@@ -1,9 +1,8 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
-#!/bin/bash
 
 # Set the directory to search in (change this to your specific folder)
-search_dir="/Volumes/WL-SL/02 Slickline/01 Jobs/BECL BP/Unit1/SQB"
+search_dir="/Volumes/WL-SL/02 Slickline/01 Jobs/BECL BP/SQB/"
 # search_dir="/Volumes/WL-SL/IMS 2024"
 
 # Set the output file

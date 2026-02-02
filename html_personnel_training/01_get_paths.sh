@@ -11,6 +11,7 @@ search_dir="/Volumes/HSE/NEOS Personnel Certificate"
 # Set the output file
 output_file="pdf_list_personnel_training.txt"
 
+
 # Clear the output file if it already exists
 >"$output_file"
 

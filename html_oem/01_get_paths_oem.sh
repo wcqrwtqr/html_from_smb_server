@@ -1,12 +1,10 @@
 #!/usr/bin/env sh
 
-#!/bin/bash
-
 # Set the directory to search in (change this to your specific folder)
 search_dir="/Volumes/WL-SL/02 Slickline/05 OEM Quality Book"
 
 # Set the output file
-output_file="pdf_list_oem.txt"
+# output_file="pdf_list_oem.txt"
 
 # Clear the output file if it already exists
 >"$output_file"
@@ -18,7 +16,8 @@ find "$search_dir" -type f -name "*.pdf" | while read -r file; do
   # Get the absolute path of the file
   abs_path=$(realpath "$file")
   # Append the file name and path to the output file
-  echo "$file_name,\"$abs_path\"" >>"$output_file"
+  # echo "$file_name,\"$abs_path\"" >>"$output_file"
+  printf '%s,"%s"\n' "$file_name" "$abs_path" >> "$output_file"
 done
 
 echo "Results have been saved to $output_file"

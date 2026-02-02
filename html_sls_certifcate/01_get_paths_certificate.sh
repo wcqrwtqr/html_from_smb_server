@@ -1,7 +1,6 @@
 #!/usr/bin/env sh
 
-#!/bin/bash
-
+# What is the code doing while this lag
 # Set the directory to search in (change this to your specific folder)
 # search_dir="/Volumes/WL-SL/IMS 2024"
 search_dir="/Volumes/WL-SL/02 Slickline/02 Maintenance"
