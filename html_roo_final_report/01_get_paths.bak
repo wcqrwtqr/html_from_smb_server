@@ -1,6 +1,5 @@
 #!/usr/bin/env sh
 
-#!/bin/bash
 
 # Set the directory to search in (change this to your specific folder)
 search_dir="/Volumes/WL-SL/02 Slickline/01 Jobs/BECL BP/Unit1/Daily Report"

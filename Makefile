@@ -4,7 +4,7 @@
 # pages needed.
 
 # Define each subdirectory
-SUBDIRS = roo_sqb html_roo_final_report html_sls_certifcate 
+SUBDIRS = roo_sqb html_roo_final_report html_sls_certifcate html_coc
 
 # Default target to build all subdirectories
 all: $(SUBDIRS)

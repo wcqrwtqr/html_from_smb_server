@@ -1,6 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-# sed -i '' 's|/Volumes/WL-SL|../..|g' ./output_certificate.html
 
 # Check if the input file exists before attempting to modify it
 if [ ! -f "./output_certificate.html" ]; then
@@ -9,7 +8,7 @@ if [ ! -f "./output_certificate.html" ]; then
 fi
 
 # Attempt to run the sed command
-if ! sed -i '' 's|/Volumes/WL-SL|../..|g' ./output_certificate.html; then
+if ! sed -i '' 's|/Volumes/WL-SL|..|g' ./output_certificate.html; then
     # sed returned a non-zero exit status, indicating an error
     echo "Error: sed failed to modify './output_certificate.html'." >&2
     echo "Possible reasons:" >&2

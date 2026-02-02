@@ -1,6 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-# sed -i '' 's|/Volumes/WL-SL|../..|g' output_oem.html
 
 
 # Check if the input file exists before attempting to modify it

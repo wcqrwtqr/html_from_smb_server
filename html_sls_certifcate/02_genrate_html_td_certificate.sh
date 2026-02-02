@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Define the input file and output HTML file
 input_file="pdf_list_certificate.txt"
