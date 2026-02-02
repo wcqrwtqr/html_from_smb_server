@@ -34,10 +34,11 @@ remove-files:
 
 # Target to remove specific files before starting the scripts
 remove-files_text:
-	cat ./part1.html ./output_oem.html ./part2.html > catted_output.html
+# cat ./part1.html ./output_oem.html ./part2.html > catted_output.html
+	cat ./header_oem_tag.html ../partial-html_body/nav_tag.html ./table_oem_tag.html ./output_oem.html ./part2.html > catted_output.html
 	rm -f ./pdf_list_oem.txt ./output_oem.html
 	@echo "Removed pdf_list_oem.txt and output_oem.html after finish"
-	rm -f /Volumes/WL-SL/Webpage/equipment/sls_OEM.html
-	cp ./catted_output.html /Volumes/WL-SL/Webpage/equipment/sls_OEM.html
+	rm -f /Volumes/WL-SL/Webpage/sls_OEM.html
+	cp ./catted_output.html /Volumes/WL-SL/Webpage/sls_OEM.html
 	@echo "Removed the webpage sls_OEM.html and coppied the updated file in its place"
 

@@ -37,8 +37,8 @@ remove-files_text:
 	cat ./header_certificate_tag.html ../partial-html_body/nav_tag.html ./table_tag.html ./output_certificate.html ./part2.html > final_certificate.html
 	rm -f ./pdf_list_certificate.txt ./output_certificate.html
 	@echo "Removed pdf_list_truck_maintenance.txt after finish"
-	rm -f /Volumes/WL-SL/Webpage/equipment/all-certificate.html
-	cp ./final_certificate.html /Volumes/WL-SL/Webpage/equipment/all-certificate.html
+	rm -f /Volumes/WL-SL/Webpage/all-certificate.html
+	cp ./final_certificate.html /Volumes/WL-SL/Webpage/all-certificate.html
 	@echo "remove webpage all-certificate.html from server and replace it"
 	@echo "=============================================================="
 	@echo "=============CERTIFICAT UPDATED IN WEBPAGE===================="

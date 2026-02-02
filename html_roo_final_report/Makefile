@@ -39,6 +39,7 @@ remove-files_text:
 	rm -f ./pdf_list_roo_final_report.txt ./output_roo_final_report.html
 	@echo "Removed pdf_list_sls.txt after finish"
 	rm -f /Volumes/WL-SL/Webpage/ROO-Final_Report.html
+	@echo "Removed pdf_list_sls.txt after finish"
 	cp ./catted_output.html /Volumes/WL-SL/Webpage/ROO-Final_Report.html
 	@echo "=============================================================="
 	@echo "================FINAL REPORT UPDATED IN WEBPAGE==============="
