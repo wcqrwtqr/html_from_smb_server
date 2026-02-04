@@ -28,7 +28,7 @@ row_number=1
     echo "    <td>$size</td>"
     echo "    <td>$tag</td>"
     echo "    <td>$manufacturer</td>"
-    echo "    <td>$comment</td>"
+    # echo "    <td>$comment</td>"
     echo "    <td>$bl</td>"
     if [[ $inOperation -eq 1 ]]; then
         echo "    <td>Yes</td>"
