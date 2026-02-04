@@ -1,0 +1,7 @@
+#+title: HTML from smb server
+
+This code used to create a webpage from a server
+
+* Steps and details
+To be updated
+
