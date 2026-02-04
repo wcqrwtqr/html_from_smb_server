@@ -35,13 +35,13 @@ remove-files:
 # Target to remove specific files before starting the scripts
 remove-files_text:
 	cat ./header_sqb_tag.html ../partial-html_body/nav_tag.html ./table_sqb_tag.html ./output_roo_sqb.html ./part2.html > catted_sqb.html
-	cat ../partial-html_body/index_header.html ../partial-html_body/nav_tag.html ../partial-html_body/index_footer.html > catted_index.html
+# cat ../partial-html_body/index_header.html ../partial-html_body/nav_tag.html ../partial-html_body/index_footer.html > catted_index.html
 	rm -f ./pdf_list_roo_sqb.txt ./output_roo_sqb.html
-	rm -f /Volumes/WL-SL/Webpage/index.html
+# rm -f /Volumes/WL-SL/Webpage/index.html
 	@echo "Removed pdf_list_sls.txt after finish"
 	rm -f /Volumes/WL-SL/Webpage/ROO-SQB.html
 	cp ./catted_sqb.html /Volumes/WL-SL/Webpage/ROO-SQB.html
-	cp ./catted_index.html /Volumes/WL-SL/Webpage/index.html
+# cp ./catted_index.html /Volumes/WL-SL/Webpage/index.html
 	@echo "Removed the webpage sls_sqb.html and coppied the updated file in its place"
 	@echo "=============================================================="
 	@echo "==================SQB UPDATED IN WEBPAGE======================"

@@ -1,15 +1,16 @@
 #!/usr/bin/env bash
 
+
 # Check if the input file exists before attempting to modify it
-if [ ! -f "./output_certificate.html" ]; then
+if [ ! -f "./output_personnel_certificate.html" ]; then
     echo "Error: Input file 'output_roo_final_report.html' not found." >&2
     exit 1
 fi
 
 # Attempt to run the sed command
-if ! sed -i '' 's|/Volumes/WL-SL|..|g' ./output_certificate.html; then
+if ! sed -i '' 's|/Volumes/WL-SL|..|g' ./output_personnel_certificate.html; then
     # sed returned a non-zero exit status, indicating an error
-    echo "Error: sed failed to modify './output_certificate.html'." >&2
+    echo "Error: sed failed to modify './output_personnel_certificate.html'." >&2
     echo "Possible reasons:" >&2
     echo "  - Insufficient write permissions for the file or directory." >&2
     echo "  - Disk space issues." >&2
@@ -18,4 +19,4 @@ if ! sed -i '' 's|/Volumes/WL-SL|..|g' ./output_certificate.html; then
 fi
 
 # If sed was successful, the script continues here
-echo "File 'output_certificate.html' processed successfully."
+echo "File 'output_personnel_certificate.html' processed successfully."

@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+
 # Check if the input file exists before attempting to modify it
 if [ ! -f "./output_certificate.html" ]; then
     echo "Error: Input file 'output_roo_final_report.html' not found." >&2

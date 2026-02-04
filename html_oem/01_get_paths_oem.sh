@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # Set the directory to search in (change this to your specific folder)
 search_dir="/Volumes/WL-SL/02 Slickline/05 OEM Quality Book"

@@ -3,7 +3,7 @@
 # What is the code doing while this lag
 # Set the directory to search in (change this to your specific folder)
 # search_dir="/Volumes/WL-SL/IMS 2024"
-search_dir="/Volumes/WL-SL/02 Slickline/02 Maintenance/"
+search_dir="/Volumes/WL-SL/02 Slickline/02 Maintenance/PCE/"
 
 # Set the output file
 output_file="pdf_list_certificate.txt"
@@ -18,7 +18,7 @@ output_file="pdf_list_certificate.txt"
 >"$output_file"
 
 # Build the find command with dynamic exclusions
-find_cmd="find \"$search_dir\" -type f -name \"EXP*\" -not -path \"*/EXPIRED/*\""
+find_cmd="find \"$search_dir\" -type f -name \"[0-9][0-9][0-9][0-9]*\" -not -path \"*/EXPIRED/*\""
 # for dir in $excluded_dirs; do
 #   find_cmd="$find_cmd -not -path \"*/$dir/*\""
 # done
@@ -27,6 +27,12 @@ find_cmd="find \"$search_dir\" -type f -name \"EXP*\" -not -path \"*/EXPIRED/*\"
 eval "$find_cmd" | while read -r file; do
   # Get the file name without the .pdf extension
   file_name=$(basename "$file" .pdf)
+
+  # Skip files that contain excluded words (case-insensitive)
+  # if echo "$file_name" | grep -qi "$excluded_words"; then
+  #   echo "Skipping: $file_name (contains excluded word)"
+  #   continue
+  # fi
 
   # Get the absolute path of the file
   abs_path=$(realpath "$file")
