@@ -21,7 +21,7 @@ remove-files:
 	@echo "Removed txt and html files"
 
 # Targets for each individual script
-01_get_paths:
+01_get_anlysis_data:
 	chmod +x ./01_get_anlysis_data.sh
 
 
