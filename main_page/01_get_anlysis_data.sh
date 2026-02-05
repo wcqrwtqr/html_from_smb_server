@@ -1,30 +1,5 @@
 #!/usr/bin/env bash
 
-# Set the directory to search in (change this to your specific folder)
-# search_dir="/Volumes/WL-SL/02 Slickline/01 Jobs/BECL BP/SQB/"
-# search_dir="/Volumes/WL-SL/IMS 2024"
-
-# Set the output file
-# output_file="pdf_list_roo_sqb.txt"
-# output_file="pdf_list_oem.txt"
-
-# Clear the output file if it already exists
-# >"$output_file"
-
-# Recursively find all .pdf files and process them
-# find "$search_dir" -type f -name "*.pdf" | while read -r file; do
-#   # Get the file name without the .pdf extension
-#   file_name=(basename "$file" .pdf)
-#   # Get the absolute path of the file
-#   abs_path=(realpath "$file")
-#   # Append the file name and path to the output file
-#   echo "$file_name,\"$abs_path\"" >>"$output_file"
-# done
-
-# echo "Results have been saved to $output_file"
-
-# =========================
-
 > ./table_data.html
 # Count of SQB
 sqb_count24=$(find  "/Volumes/WL-SL/02 Slickline/01 Jobs/BECL BP/SQB/2024/" -name "*.pdf" -and -name "*SQB*" | wc -l | tr -d ' ')
@@ -66,9 +41,6 @@ final_count26=$(find  "/Volumes/WL-SL/02 Slickline/01 Jobs/BECL BP/Unit1/Daily R
 final2_count24=$(find  "/Volumes/WL-SL/02 Slickline/01 Jobs/BECL BP/Unit2/Daily Report/2024/" -name "*.pdf" -and -name "*Final*" | wc -l | tr -d ' ')
 final2_count25=$(find "/Volumes/WL-SL/02 Slickline/01 Jobs/BECL BP/Unit2/Daily Report/2025/" -name "*.pdf" -and -name "*Final*" | wc -l | tr -d ' ')
 final2_count26=$(find  "/Volumes/WL-SL/02 Slickline/01 Jobs/BECL BP/Unit2/Daily Report/2026/" -name "*.pdf" -and -name "*Final*" | wc -l | tr -d ' ')
-# printf "%s SQB report created in 2024\n" "$final_count24"
-# printf "%s SQB report created in 2025\n" "$final_count25"
-# printf "%s SQB report created in 2026\n" "$final_count26"
 # Count of post wsd
 {
     echo "  <tr>"

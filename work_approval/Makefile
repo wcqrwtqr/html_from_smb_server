@@ -34,9 +34,12 @@ remove-files:
 
 # Target to remove specific files before starting the scripts
 remove-files_text:
-	cat ./header_work_approval_tag.html ../partial-html_body/nav_tag.html ./table_tag.html ./output_work_approval.html ../partial-html_body/part2.html > ./work_approval__catted.html
-	rm -f ./pdf_list_work_approval.txt ./output_work_approval.html
+	cat ./header_work_approval_tag.html ../partial-html_body/nav_tag.html ./table_tag.html \
+	./output_work_approval.html ../partial-html_body/part2.html > ./work_approval__catted.html
+
+	rm -f ./pdf_list_work_approval.txt 
 	@echo "Removed pdf_list_work_approval.txt after finish"
+
 	rm -f /Volumes/WL-SL/Webpage/work_approval.html
 	cp ./work_approval__catted.html /Volumes/WL-SL/Webpage/work_approval.html
 	@echo "remove webpage all-certificate.html from server and replace it"
