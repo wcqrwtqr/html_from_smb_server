@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
+source /usr/local/bin/bash_colors.sh
 
 # Define the input file and output HTML file
 input_file="pdf_list_personnel.txt"
 output_file="output_personnel_certificate.html"
 
-if [[ ! -f ./pdf_list_personnel.txt ]] ; then
-    echo "The file pdf_list_personnel.txt generated from ./01_get_paths_personnel_certificate.sh was not ran"
+if [[ ! -f "$input_file" ]] ; then
+    echo -e "The file ${RED}pdf_list_personnel.txt generated from ./01_get_paths_personnel_certificate.sh${NC} was not ran"
     exit 1
 fi
 
@@ -60,4 +61,4 @@ row_number=1
   echo "</tbody>"
 } >"$output_file"
 
-echo "HTML rows generated in $output_file"
+echo -e "${YELLOW}HTML rows generated in $output_file${NC}"

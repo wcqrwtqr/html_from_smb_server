@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
+source /usr/local/bin/bash_colors.sh
 
+if ! mount | grep -q WL-SL ; then
+    echo -e "The mount /Volumes/WL-SL/ not available"
+    exit 1
+fi 
 
 # Set the directory to search in (change this to your specific folder)
 search_dir="/Volumes/WL-SL/02 Slickline/01 Jobs/BECL BP/SQB/"
@@ -22,4 +27,4 @@ find "$search_dir" -type f -name "*.pdf" | while read -r file; do
   echo "$file_name,\"$abs_path\"" >>"$output_file"
 done
 
-echo "Results have been saved to $output_file"
+echo -e "${GREEN}Results have been saved to $output_file${NC}"

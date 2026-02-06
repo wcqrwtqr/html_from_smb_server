@@ -1,14 +1,15 @@
 #!/usr/bin/env bash
+source /usr/local/bin/bash_colors.sh
 
 # Define the input file and output HTML file
 input_file_u1="pdf_list_sgs_results_u1.txt"
 output_file_u1="output_sgs_results_u1.html"
 
-if [[ ! -f ./pdf_list_sgs_results_u1.txt ]] ; then
-    echo "The file pdf_list_sgs_results_u1.txt generated from \
-        ./01_get_paths_sgs_results.sh was not ran"
+if [[ ! -f "$input_file_u1" ]]; then
+    echo -e "${RED}The $input_file_u1 is not available${NC}"
     exit 1
 fi
+
 
 # Initialize the row counter
 row_number=1
@@ -44,4 +45,4 @@ row_number=1
     echo "</tbody>"
 } >"$output_file_u1"
 
-echo "HTML rows generated in $output_file_u1"
+echo -e "${YELLOW}HTML rows generated in $output_file_u1${NC}"

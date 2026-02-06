@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+source /usr/local/bin/bash_colors.sh
 
 
 # Set the directory to search in (change this to your specific folder)
@@ -48,4 +49,4 @@ if ! sed -i '' 's| COC.*|"|g' ./dict_coc_desc.txt; then
     exit 1
 fi
 
-echo "Results have been saved to $output_file"
+echo -e "${GREEN}Results have been saved to $output_file${NC}"

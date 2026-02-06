@@ -35,11 +35,13 @@ remove-files:
 # Target to remove specific files before starting the scripts
 remove-files_text:
 # cat ./part1.html ./output_roo_final_report.html ./part2.html > catted_output.html
-	cat ./header_final_report_tag.html ../partial-html_body/nav_tag.html ./table_header_tag.html ./output_roo_final_report.html ./part2.html > catted_output.html
+	cat ./header_final_report_tag.html ../partial-html_body/nav_tag.html \
+	./table_header_tag.html ./output_roo_final_report.html ./part2.html \
+	> catted_output.html
 	rm -f ./pdf_list_roo_final_report.txt ./output_roo_final_report.html
-	@echo "Removed pdf_list_sls.txt after finish"
+	@echo "Removed pdf_list_roo_final.txt after finish"
 	rm -f /Volumes/WL-SL/Webpage/ROO-Final_Report.html
-	@echo "Removed pdf_list_sls.txt after finish"
+	@echo "Removed pdf_list_roo_final.txt after finish"
 	cp ./catted_output.html /Volumes/WL-SL/Webpage/ROO-Final_Report.html
 	@echo "=============================================================="
 	@echo "================FINAL REPORT UPDATED IN WEBPAGE==============="

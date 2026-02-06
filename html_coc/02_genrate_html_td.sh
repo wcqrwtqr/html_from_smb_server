@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+source /usr/local/bin/bash_colors.sh
+
 
 # Define the input file and output HTML file
 input_file="pdf_list_coc.txt" #pdf_list_roo_coc.txt
@@ -56,4 +58,4 @@ row_number=1
   echo "</tbody>"
 } >"$output_file"
 
-echo "HTML rows generated in $output_file"
+echo -e "${GREEN}HTML rows generated in $output_file${NC}"

@@ -1,8 +1,15 @@
 #!/usr/bin/env bash
+source /usr/local/bin/bash_colors.sh
+
 
 # Define the input file and output HTML file
 input_file="pdf_list_certificate.txt"
 output_file="output_certificate.html"
+
+if [[ ! -f "$input_file" ]]; then
+    echo -e "${RED}The $input_file is not available${NC}"
+    exit 1
+fi
 
 # Initialize the row counter
 row_number=1
@@ -66,4 +73,4 @@ row_number=1
   echo "</tbody>"
 } >"$output_file"
 
-echo "HTML rows generated in $output_file"
+echo -e "${GREEN}HTML rows generated in $output_file${NC}"

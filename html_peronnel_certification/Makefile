@@ -1,5 +1,4 @@
 # Makefile
-
 # To run this code, just run 
 #       make run-all
 # Target to run all scripts in sequence
@@ -38,13 +37,16 @@ remove-files:
 
 # Target to remove specific files before starting the scripts
 remove-files_text:
-	cat ./header_certificate_tag.html ../partial-html_body/nav_tag.html ./table_tag.html ./output_personnel_certificate.html ../partial-html_body/part2.html > ./personnel_certificate__catted.html
+	cat ./header_certificate_tag.html ../partial-html_body/nav_tag.html ./table_tag.html \
+	./output_personnel_certificate.html ../partial-html_body/part2.html > \
+	./personnel_certificate__catted.html
+
 	rm -f ./pdf_list_personnel.txt ./output_personnel_certificate.html
-	@echo "Removed pdf_list_truck_maintenance.txt after finish"
+	@echo -e "Removed pdf_list_personnel.txt after finish"
 	rm -f /Volumes/WL-SL/Webpage/personnel_certificaiton.html
 	cp ./personnel_certificate__catted.html /Volumes/WL-SL/Webpage/personnel_certificaiton.html
 	@echo "remove webpage all-certificate.html from server and replace it"
 	@echo "=============================================================="
-	@echo "===============MS sheet UPDATED IN WEBPAGE===================="
+	@echo "=============MS sheet UPDATED IN WEBPAGE======================"
 	@echo "=============================================================="
 

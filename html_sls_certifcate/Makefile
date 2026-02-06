@@ -41,6 +41,6 @@ remove-files_text:
 	cp ./final_certificate.html /Volumes/WL-SL/Webpage/all-certificate.html
 	@echo "remove webpage all-certificate.html from server and replace it"
 	@echo "=============================================================="
-	@echo "=============CERTIFICAT UPDATED IN WEBPAGE===================="
+	@echo "=============CERTIFICATE UPDATED IN WEBPAGE==================="
 	@echo "=============================================================="
 

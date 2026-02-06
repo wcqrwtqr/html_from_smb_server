@@ -17,7 +17,7 @@ run-all: remove-files 01_get_asset_from_db
 
 # Target to remove specific files before starting the scripts
 remove-files:
-	rm -f ./output_certificate.html ./pdf_list_certificate.txt
+	rm -f ./output_certificate.html ./pdf_list_asset_db.txt
 	@echo "Removed txt and html files"
 
 # Targets for each individual script
@@ -26,12 +26,13 @@ remove-files:
 
 # Target to remove specific files before starting the scripts
 remove-files_text:
-	cat ./header_asset_register_tag.html ../partial-html_body/nav_tag.html ./table_tag.html ./assets_table.html ./part2.html > ./final_asset_page.html
-	rm -f ./assets_table.html ./pdf_list_certificate.txt
-	@echo "Removed pdf_list_truck_maintenance.txt after finish"
-	rm -f /Volumes/WL-SL/Webpage/assets_register.html
+	cat ./header_asset_register_tag.html ../partial-html_body/nav_tag.html \
+	./table_tag.html ./assets_table.html ./part2.html > ./final_asset_page.html
+	rm -f ./assets_table.html ./pdf_list_asset_db.txt
+	@echo "Removed pdf_list_list_db.txt after finish"
+	rm -f /Volumes/WL-SL/Webpage/assets_register.html ./pdf_list_certificate.txt
 	cp ./final_asset_page.html /Volumes/WL-SL/Webpage/assets_register.html
-	@echo "remove webpage asset_register.html from server and replace it"
+	@echo "remove webpage assets_register.html from server and replace it"
 	@echo "=============================================================="
 	@echo "==================Asset UPDATED IN WEBPAGE===================="
 	@echo "=============================================================="

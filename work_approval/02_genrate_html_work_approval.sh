@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
+source /usr/local/bin/bash_colors.sh
 
 # Define the input file and output HTML file
 input_file="pdf_list_work_approval.txt"
 output_file="output_work_approval.html"
 
-if [[ ! -f ./pdf_list_work_approval.txt ]] ; then
-    echo "The file pdf_list_work_approval.txt generated from ./01_get_paths_work_approval.sh was not ran"
+if [[ ! -f "$input_file" ]]; then
+    echo -e "${RED}The $input_file is not available${NC}"
     exit 1
 fi
 
@@ -60,4 +61,4 @@ row_number=1
   echo "</tbody>"
 } >"$output_file"
 
-echo "HTML rows generated in $output_file"
+echo -e "${GREEN}HTML rows generated in $output_file${NC}"

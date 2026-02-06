@@ -45,7 +45,7 @@ remove-files_text:
 	@echo "Removed pdf_list_sls.txt after finish"
 	cp ./catted_output.html /Volumes/WL-SL/Webpage/sls_coc_nov.html
 	@echo "=============================================================="
-	@echo "================FINAL REPORT UPDATED IN WEBPAGE==============="
+	@echo "================COC UPDATED UB WEBPAGE========================"
 	@echo "=============================================================="
 
 

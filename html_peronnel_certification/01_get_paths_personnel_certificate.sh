@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
+source /usr/local/bin/bash_colors.sh
 
 # What is the code doing while this lag
 # Set the directory to search in (change this to your specific folder)
-# search_dir="/Volumes/WL-SL/IMS 2024"
+if [[ ! -d "/Volumes/WL-SL/02 Slickline/.Personnel/" ]]; then
+    echo -e "${RED}The folder .Personnel is not available${NC}"
+    exit 1
+fi
 search_dir="/Volumes/WL-SL/02 Slickline/.Personnel/"
 
 # Set the output file
@@ -12,11 +16,7 @@ output_file="pdf_list_personnel.txt"
 >"$output_file"
 
 # Build the find command with dynamic exclusions
-# find_cmd="find \"$search_dir\" -type f -name \"[0-9][0-9][0-9][0-9]*\" -not -path \"*/EXPIRED/*\""
 find_cmd="find \"$search_dir\" -type f -name \"EXP*\" -not -path \"*/EXPIRED/*\""
-# for dir in $excluded_dirs; do
-#   find_cmd="$find_cmd -not -path \"*/$dir/*\""
-# done
 
 # Recursively find all .pdf files and process them
 eval "$find_cmd" | while read -r file; do
@@ -29,4 +29,4 @@ eval "$find_cmd" | while read -r file; do
   echo "$file_name,\"$abs_path\"" >>"$output_file"
 done
 
-echo "Results have been saved to $output_file"
+echo -e "${YELLOW}Results have been saved to $output_file${NC}"

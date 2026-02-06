@@ -41,4 +41,7 @@ remove-files_text:
 	rm -f /Volumes/WL-SL/Webpage/sls_OEM.html
 	cp ./catted_output.html /Volumes/WL-SL/Webpage/sls_OEM.html
 	@echo "Removed the webpage sls_OEM.html and coppied the updated file in its place"
+	@echo "=============================================================="
+	@echo "================OEM NOT WORKING MAKE FILE====================="
+	@echo "=============================================================="
 

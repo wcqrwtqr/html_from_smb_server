@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
+source /usr/local/bin/bash_colors.sh
+
 
 sed_file="output_sgs_results_u1.html"
 
 # Check if the input file exists before attempting to modify it
 if [ ! -f "$sed_file" ]; then
-    echo "Error: Input file 'output_roo_final_report.html' not found." >&2
+    echo -e "${RED}Error: Input file 'output_roo_final_report.html' not found.${NC}" >&2
     exit 1
 fi
 
@@ -20,4 +22,4 @@ if ! sed -i '' 's|/Volumes/WL-SL|..|g' "$sed_file"; then
 fi
 
 # If sed was successful, the script continues here
-echo "File 'output_sgs_results_u1.html' processed successfully."
+echo -e "${YELLOW}File 'output_sgs_results_u1.html' processed successfully.${NC}"

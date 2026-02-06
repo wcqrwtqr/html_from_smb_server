@@ -44,6 +44,6 @@ remove-files_text:
 	cp ./sgs_results_u1__catted.html /Volumes/WL-SL/Webpage/sgs_results_u1.html
 	@echo "remove webpage all-certificate.html from server and replace it"
 	@echo "=============================================================="
-	@echo "===============MS sheet UPDATED IN WEBPAGE===================="
+	@echo "===============SGS DATA UPDATED IN WEBPAGE===================="
 	@echo "=============================================================="
 

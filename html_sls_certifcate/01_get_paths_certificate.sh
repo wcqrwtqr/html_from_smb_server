@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
+source /usr/local/bin/bash_colors.sh
+
+if ! mount | grep -q WL-SL ; then
+    echo -e "${RED}The mount /Volumes/WL-SL/ not available${NC}"
+    exit 1
+fi 
 
 # What is the code doing while this lag
-# Set the directory to search in (change this to your specific folder)
-# search_dir="/Volumes/WL-SL/IMS 2024"
 search_dir="/Volumes/WL-SL/02 Slickline/02 Maintenance/"
 
 # Set the output file
@@ -34,4 +38,4 @@ eval "$find_cmd" | while read -r file; do
   echo "$file_name,\"$abs_path\"" >>"$output_file"
 done
 
-echo "Results have been saved to $output_file"
+echo -e "${GREEN}Results have been saved to $output_file${NC}"

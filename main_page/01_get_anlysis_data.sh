@@ -1,13 +1,12 @@
 #!/usr/bin/env bash
+source /usr/local/bin/bash_colors.sh
+
 
 > ./table_data.html
 # Count of SQB
 sqb_count24=$(find  "/Volumes/WL-SL/02 Slickline/01 Jobs/BECL BP/SQB/2024/" -name "*.pdf" -and -name "*SQB*" | wc -l | tr -d ' ')
 sqb_count25=$(find "/Volumes/WL-SL/02 Slickline/01 Jobs/BECL BP/SQB/2025/" -name "*.pdf" -and -name "*SQB*" | wc -l | tr -d ' ')
 sqb_count26=$(find  "/Volumes/WL-SL/02 Slickline/01 Jobs/BECL BP/SQB/2026/" -name "*.pdf" -and -name "*SQB*" | wc -l | tr -d ' ')
-# printf "%s SQB report created in 2024\n" "$sqb_count24"
-# printf "%s SQB report created in 2025\n" "$sqb_count25"
-# printf "%s SQB report created in 2026\n" "$sqb_count26"
 {
     echo "<tbody>"
     echo "  <tr>"
@@ -23,9 +22,6 @@ sqb_count26=$(find  "/Volumes/WL-SL/02 Slickline/01 Jobs/BECL BP/SQB/2026/" -nam
 final_count24=$(find  "/Volumes/WL-SL/02 Slickline/01 Jobs/BECL BP/Unit1/Daily Report/2024/" -name "*.pdf" -and -name "*Final*" | wc -l | tr -d ' ')
 final_count25=$(find "/Volumes/WL-SL/02 Slickline/01 Jobs/BECL BP/Unit1/Daily Report/2025/" -name "*.pdf" -and -name "*Final*" | wc -l | tr -d ' ')
 final_count26=$(find  "/Volumes/WL-SL/02 Slickline/01 Jobs/BECL BP/Unit1/Daily Report/2026/" -name "*.pdf" -and -name "*Final*" | wc -l | tr -d ' ')
-# printf "%s SQB report created in 2024\n" "$final_count24"
-# printf "%s SQB report created in 2025\n" "$final_count25"
-# printf "%s SQB report created in 2026\n" "$final_count26"
 # Count of post wsd
 {
     echo "  <tr>"
@@ -81,4 +77,5 @@ cert_other_count=$(find  "/Volumes/WL-SL/02 Slickline/02 Maintenance/" -name "EX
     
 } >> ./table_data.html 
 
-echo "</tbody>" >> ./table_data.html 
+echo -e "${MAGENTA}The file table_data.html${NC}"
+

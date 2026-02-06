@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
+source /usr/local/bin/bash_colors.sh
 
+
+if ! mount | grep -q WL-SL ; then
+    echo -e "The mount ${RED}/Volumes/WL-SL/${NC} not available"
+    exit 1
+fi 
 
 # Set the directory to search in (change this to your specific folder)
 search_dir="/Volumes/WL-SL/02 Slickline/01 Jobs/BECL BP/Unit1/Daily Report"
@@ -13,7 +19,9 @@ output_file="pdf_list_roo_final_report.txt"
 
 # Recursively find all .pdf files and process them from both directories
 for search_directory in "$search_dir" "$search_dir2"; do
-  find "$search_directory" -type f -name "*.pdf" -path "*/Final Report*" -name "*Final*" -not -name "*Slickline*" -not -name "*old*" | while read -r file; do
+  find "$search_directory" -type f -name "*.pdf" -path "*/Final Report*" -name \
+      "*Final*" -not -name "*Slickline*" -not -name "*old*" | \
+      while read -r file; do
     # Get the file name without the .pdf extension
     file_name=$(basename "$file" .pdf)
     # Get the absolute path of the file
@@ -23,4 +31,4 @@ for search_directory in "$search_dir" "$search_dir2"; do
   done
 done
 
-echo "Results have been saved to $output_file"
+echo -e "${MAGENTA}Results have been saved to $output_file${NC}"
