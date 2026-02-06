@@ -34,6 +34,7 @@
               aria-expanded="false">Operation</a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="./ROO-SQB.html">ROO SQB</a></li>
+              <li><a class="dropdown-item" href="./sgs_results_u1.html">SGS results</a></li>
               <li><a class="dropdown-item" href="./ROO-Final_Report.html">ROO Final Report</a></li>
             </ul>
           </li>
@@ -109,27 +110,30 @@
     <td><a href="../05 WORK APPROVAL/موافقة عمل/BECL/EXP 20260429 South Rumaila Night approval.pdf" target="_blank">link</a></td>
   </tr>
 </tbody>
-      </table>
-    </div>
+</table>
+</div>
 
-    <script>
-      document.getElementById("searchForm").addEventListener("submit", function(event) {
-          event.preventDefault(); // Prevent the form from submitting traditionally
-          const searchTerm = document.getElementById("searchInput").value.toLowerCase();
-          const rows = document.querySelectorAll("#pdfTable tbody tr");
+<script>
+  document.getElementById("searchForm").addEventListener("submit", function(event) {
+      event.preventDefault();
 
-          rows.forEach(row => {
-              const docName = row.querySelector("td").textContent.toLowerCase();
-              if (docName.includes(searchTerm)) {
-                  row.style.display = ""; // Show row
-              } else {
-                  row.style.display = "none"; // Hide row
-              }
-          });
+      const searchTerm = document.getElementById("searchInput").value.toLowerCase();
+      const rows = document.querySelectorAll("#pdfTable tbody tr");
+
+      rows.forEach(row => {
+          // Get text from ALL columns
+          const rowText = Array.from(row.querySelectorAll("td"))
+                .map(td => td.textContent.toLowerCase())
+                .join(" ");
+
+          if (rowText.includes(searchTerm)) {
+              row.style.display = "";
+          } else {
+              row.style.display = "none";
+          }
       });
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  </body>
+  });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
 </html>
-
-
