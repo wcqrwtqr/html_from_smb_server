@@ -18,7 +18,7 @@ output_file="pdf_list_roo_sqb.txt"
 >"$output_file"
 
 # Recursively find all .pdf files and process them
-find "$search_dir" -type f -name "*.pdf" | while read -r file; do
+find "$search_dir" -type f -iname "*.pdf" | while read -r file; do
   # Get the file name without the .pdf extension
   file_name=$(basename "$file" .pdf)
   # Get the absolute path of the file
