@@ -7,8 +7,8 @@ source /usr/local/bin/bash_colors.sh
 # HSE folder to the WL-SL rsync
 
 # Check if the mnt IMS and WL-SL
-if ! mount | grep -q IMS ; then
-  echo "Error: ${RED}/Volumes/IMS${NC} is not mounted. Exiting." >&2
+if ! mount | grep -q HSE ; then
+  echo "Error: ${RED}/Volumes/HSE${NC} is not mounted. Exiting." >&2
   exit 1
 fi
 echo "IMS volume available, continuing..."
