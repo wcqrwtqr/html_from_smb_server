@@ -44,6 +44,6 @@ remove-files_text:
 	cp ./work_approval__catted.html /Volumes/WL-SL/Webpage/work_approval.html
 	@echo "remove webpage all-certificate.html from server and replace it"
 	@echo "=============================================================="
-	@echo "===============MS sheet UPDATED IN WEBPAGE===================="
+	@echo "===============WORK APPROVAL UPDATED IN WEBPAGE==============="
 	@echo "=============================================================="
 
