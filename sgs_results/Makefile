@@ -19,7 +19,7 @@ run-all: remove-files 01_get_paths_sgs_results 02_genrate_html_sgs_results 03_se
 
 # Target to remove specific files before starting the scripts
 remove-files:
-	rm -f ./output_sgs_results_u1.html ./pdf_list_sgs_results_u1.txt
+	rm -f ./output_sgs_results_u1.html ./pdf_list_sgs_results_2026.txt
 	@echo "Removed txt and html files"
 
 # Targets for each individual script
@@ -37,8 +37,8 @@ remove-files_text:
 	cat ./header_sgs_results_u1_tag.html ../partial-html_body/nav_tag.html ./table_tag.html \
 	./output_sgs_results_u1.html ../partial-html_body/part2.html > ./sgs_results_u1__catted.html
 
-	rm -f ./pdf_list_sgs_results_u1.txt 
-	@echo "Removed pdf_list_sgs_results_u1.txt after finish"
+	rm -f ./pdf_list_sgs_results_2026.txt 
+	@echo "Removed pdf_list_sgs_results_2026.txt after finish"
 
 	rm -f /Volumes/WL-SL/Webpage/sgs_results_u1.html
 	cp ./sgs_results_u1__catted.html /Volumes/WL-SL/Webpage/sgs_results_u1.html

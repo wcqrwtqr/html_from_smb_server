@@ -2,7 +2,7 @@
 source /usr/local/bin/bash_colors.sh
 
 # Define the input file and output HTML file
-input_file_u1="pdf_list_sgs_results_u1.txt"
+input_file_u1="pdf_list_sgs_results_2026.txt"
 output_file_u1="output_sgs_results_u1.html"
 
 if [[ ! -f "$input_file_u1" ]]; then

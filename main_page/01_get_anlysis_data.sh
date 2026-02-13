@@ -2,6 +2,10 @@
 source /usr/local/bin/bash_colors.sh
 
 
+# TODO: export the data for 2024 and 2025 to files and if they are avialble then
+# no need to run the find command on it while it has been ran before
+# So the code will be ran for 2026 only 
+
 > ./table_data.html
 # Count of SQB
 sqb_count24=$(find  "/Volumes/WL-SL/02 Slickline/01 Jobs/BECL BP/SQB/2024/" -name "*.pdf" -and -name "*SQB*" | wc -l | tr -d ' ')
