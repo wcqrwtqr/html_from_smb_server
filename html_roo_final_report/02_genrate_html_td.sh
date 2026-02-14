@@ -3,7 +3,7 @@ source /usr/local/bin/bash_colors.sh
 
 
 # Define the input file and output HTML file
-input_file="pdf_list_roo_final_report.txt" #pdf_list_roo_final_report.txt
+input_file="pdf_list_roo_final_report.txt" 
 output_file="output_roo_final_report.html"
 
 if [[ ! -f "$input_file" ]]; then

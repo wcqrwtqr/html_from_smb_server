@@ -8,7 +8,9 @@
 .PHONY: run-all remove-files remove-files_text
 
 # Target to run all scripts in sequence
-run-all: remove-files 00_rsync_personnel_certificates 01_get_paths_personnel_certificate 02_genrate_html_personnel_certificate 03_sed_on_html_personnel_certificate
+run-all: remove-files 00_rsync_personnel_certificates \
+	01_get_paths_personnel_certificate 02_genrate_html_personnel_certificate \
+	03_sed_on_html_personnel_certificate
 	@echo "Running all scripts in sequence..."
 	./00_rsync_personnel_certificates.sh
 	./01_get_paths_personnel_certificate.sh
@@ -47,6 +49,6 @@ remove-files_text:
 	cp ./personnel_certificate__catted.html /Volumes/WL-SL/Webpage/personnel_certificaiton.html
 	@echo "remove webpage all-certificate.html from server and replace it"
 	@echo "=============================================================="
-	@echo "=============MS sheet UPDATED IN WEBPAGE======================"
+	@echo "=============Personnel Certificate Updated===================="
 	@echo "=============================================================="
 

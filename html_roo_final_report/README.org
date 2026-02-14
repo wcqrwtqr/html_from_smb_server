@@ -1,0 +1,8 @@
+#+title: Final report html 
+
+* Code actions
+In this code, I made it to generate the 2024 and 2025 and save it as txt file,
+then I only run the code over 2026 only so the build of the webpage can be
+faster.
+
+

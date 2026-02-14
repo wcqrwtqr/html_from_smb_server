@@ -38,9 +38,9 @@ final_count26=$(find  "/Volumes/WL-SL/02 Slickline/01 Jobs/BECL BP/Unit1/Daily R
     
 } >> ./table_data.html 
 
-final2_count24=$(find  "/Volumes/WL-SL/02 Slickline/01 Jobs/BECL BP/Unit2/Daily Report/2024/" -name "*.pdf" -and -name "*Final*" | wc -l | tr -d ' ')
+final2_count24=$(find "/Volumes/WL-SL/02 Slickline/01 Jobs/BECL BP/Unit2/Daily Report/2024/" -name "*.pdf" -and -name "*Final*" | wc -l | tr -d ' ')
 final2_count25=$(find "/Volumes/WL-SL/02 Slickline/01 Jobs/BECL BP/Unit2/Daily Report/2025/" -name "*.pdf" -and -name "*Final*" | wc -l | tr -d ' ')
-final2_count26=$(find  "/Volumes/WL-SL/02 Slickline/01 Jobs/BECL BP/Unit2/Daily Report/2026/" -name "*.pdf" -and -name "*Final*" | wc -l | tr -d ' ')
+final2_count26=$(find "/Volumes/WL-SL/02 Slickline/01 Jobs/BECL BP/Unit2/Daily Report/2026/" -name "*.pdf" -and -name "*Final*" | wc -l | tr -d ' ')
 # Count of post wsd
 {
     echo "  <tr>"
@@ -55,31 +55,31 @@ final2_count26=$(find  "/Volumes/WL-SL/02 Slickline/01 Jobs/BECL BP/Unit2/Daily 
 
 # Count of certification
 
-cert_pce_count=$(find  "/Volumes/WL-SL/02 Slickline/02 Maintenance/PCE/" -name "EXP*" -not -path "*/EXPIRED/*" | wc -l | tr -d ' ')
-cert_other_count=$(find  "/Volumes/WL-SL/02 Slickline/02 Maintenance/" -name "EXP*" -not -path "*/EXPIRED*" -not -path "*/PCE/*" | wc -l | tr -d ' ')
-# printf "%s SQB report created in 2024\n" "$final_count24"
-# Count of post wsd
-{
-    echo "  <tr>"
-    # echo "    <th scope=\"row\">$row_number</th>"
-    echo "    <td>Valid Certificates PCE</td>"
-    echo "    <td>-</td>"
-    echo "    <td>-</td>"
-    echo "    <td>$cert_pce_count</td>"
-    echo "  </tr>"
+# cert_pce_count=$(find  "/Volumes/WL-SL/02 Slickline/02 Maintenance/PCE/" -name "EXP*" -not -path "*/EXPIRED/*" | wc -l | tr -d ' ')
+# cert_other_count=$(find  "/Volumes/WL-SL/02 Slickline/02 Maintenance/" -name "EXP*" -not -path "*/EXPIRED*" -not -path "*/PCE/*" | wc -l | tr -d ' ')
+# # printf "%s SQB report created in 2024\n" "$final_count24"
+# # Count of post wsd
+# {
+#     echo "  <tr>"
+#     # echo "    <th scope=\"row\">$row_number</th>"
+#     echo "    <td>Valid Certificates PCE</td>"
+#     echo "    <td>-</td>"
+#     echo "    <td>-</td>"
+#     echo "    <td>$cert_pce_count</td>"
+#     echo "  </tr>"
     
-} >> ./table_data.html 
+# } >> ./table_data.html 
 
-{
-    echo "  <tr>"
-    # echo "    <th scope=\"row\">$row_number</th>"
-    echo "    <td>Valid Certificates other than PCE</td>"
-    echo "    <td>-</td>"
-    echo "    <td>-</td>"
-    echo "    <td>$cert_other_count</td>"
-    echo "  </tr>"
+# {
+#     echo "  <tr>"
+#     # echo "    <th scope=\"row\">$row_number</th>"
+#     echo "    <td>Valid Certificates other than PCE</td>"
+#     echo "    <td>-</td>"
+#     echo "    <td>-</td>"
+#     echo "    <td>$cert_other_count</td>"
+#     echo "  </tr>"
     
-} >> ./table_data.html 
+# } >> ./table_data.html 
 
 echo -e "${MAGENTA}The file table_data.html${NC}"
 

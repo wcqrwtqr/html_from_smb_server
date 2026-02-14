@@ -18,6 +18,7 @@ search_dir_u22025="/Volumes/WL-SL/02 Slickline/01 Jobs/BECL BP/Unit2/Daily Repor
 search_dir_u12026="/Volumes/WL-SL/02 Slickline/01 Jobs/BECL BP/Unit1/Daily Report/2026/"
 search_dir_u22026="/Volumes/WL-SL/02 Slickline/01 Jobs/BECL BP/Unit2/Daily Report/2026/"
 
+# Data for    2024
 # These files will be resued as we don't need to loop over them every time
 if [[ ! -s "$output_file_2024" ]]; then
     echo "2024 file is not available... run script to generate it"
@@ -32,6 +33,7 @@ if [[ ! -s "$output_file_2024" ]]; then
 ' {} \; >> "$output_file_2024"
     echo "Done generating 2024 SGS results"
 fi 
+# Data for    2024
 # Check for 2025 data 
 if [[ ! -s "$output_file_2025" ]]; then
     echo "2025 file is not available... run script to generate it"
@@ -46,9 +48,6 @@ if [[ ! -s "$output_file_2025" ]]; then
 ' {} \; >> "$output_file_2025"
     echo "Done generating 2024 SGS results"
 fi 
-
-# Above code is for 2024 and 2025, no need to run it again 
-
 
 # Set the output file
 output_file_2026="pdf_list_sgs_results_2026.txt"
