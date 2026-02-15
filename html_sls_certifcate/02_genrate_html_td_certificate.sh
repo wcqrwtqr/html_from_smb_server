@@ -54,14 +54,6 @@ row_number=1
     else
         echo "    <td>$pdf_name</td>"
     fi
-
-    # if [[ "$exp_date" -lt "$today_date" ]]; then
-    #     echo "    <td style='background-color:Tomato;'>$pdf_name</td>"
-    # else
-    #     echo "    <td>$pdf_name</td>"
-    # fi
-
-
     echo "    <td>Certificate</td>"
     echo "    <td><a href=\"$pdf_path\" target=\"_blank\">link</a></td>"
     echo "  </tr>"
