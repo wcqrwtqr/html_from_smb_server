@@ -29,4 +29,4 @@ eval "$find_cmd" | while read -r file; do
   echo "$file_name,\"$abs_path\"" >>"$output_file"
 done
 
-echo -e "${RED}Results have been saved to $output_file${NC}"
+echo -e "${MAGENTA}Results have been saved to $output_file${NC}"
