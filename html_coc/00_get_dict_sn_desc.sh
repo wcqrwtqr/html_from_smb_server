@@ -12,6 +12,8 @@ output_file="dict_coc_desc.txt"
 >"$output_file"
 
 # Recursively find all .pdf files and process them from both directories
+# Search my Downloads folder for all the COC so we can make the dictionary
+# file ./dict_coc_desc.txt to be used as a reference later
 for search_directory in "$search_dir"; do
   find "$search_directory" -type f -name "*.pdf" -name "*CC1*" | while read -r file; do
     # Get the file name without the .pdf extension
@@ -29,6 +31,7 @@ if [ ! -f "./dict_coc_desc.txt" ]; then
 fi
 
 # Attempt to run the sed command
+# Here we remove the path of my mac and return only the SN and the file name
 if ! sed -i '' 's|/Users/mohammedalbatati/Downloads/Missing utm/COC/||g' ./dict_coc_desc.txt; then
     # sed returned a non-zero exit status, indicating an error
     echo "Error: sed failed to modify 'output_coc.html'." >&2

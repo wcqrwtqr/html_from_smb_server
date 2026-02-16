@@ -7,8 +7,10 @@ if ! mount | grep -q WL-SL ; then
 fi 
 
 # Set the directory to search in (change this to your specific folder)
+# Search the files in Server under .COC/ folder to get the pdf_list_coc.txt
+# TODO: Might consider rsync to ensure all COC files had been moved to the
+# server.
 search_dir="/Volumes/WL-SL/02 Slickline/05 OEM Quality Book/.COC/"
-# search_dir="/Users/mohammedalbatati/Downloads/Missing utm/COC/"
 
 # Set the output file
 output_file="pdf_list_coc.txt"

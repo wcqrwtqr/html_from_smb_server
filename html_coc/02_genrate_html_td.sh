@@ -15,6 +15,11 @@ if [ ! -f "./dict_coc_desc.txt" ]; then
     exit 1
 fi
 
+# EXPLAINATION for CODE
+# Below code takes the ./dict_coc_desc.txt and adds it to the the dictionalry
+# sn_dict so we use it as way to get the description of the SN in the HTML so
+# the code will take the input from two files ./dict_coc_desc.txt  and
+# ./pdf_list_coc.txt so the sn_dict can refer to the SN and description
 while IFS=',' read -r key value; do
   # Trim quotes and whitespace from key and value
   key="${key#\"}"

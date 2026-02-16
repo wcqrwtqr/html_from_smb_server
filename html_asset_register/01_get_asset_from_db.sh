@@ -31,9 +31,9 @@ row_number=1
         description=$(echo "$description" | tr -d '"')
         echo "  <tr>"
         echo "    <th scope=\"row\">$row_number</th>"
-        echo "    <td>$description</td>"
         echo "    <td>$sn</td>"
         echo "    <td>$type</td>"
+        echo "    <td>$description</td>"
         echo "    <td>$size</td>"
         echo "    <td>$tag</td>"
         echo "    <td>$manufacturer</td>"
