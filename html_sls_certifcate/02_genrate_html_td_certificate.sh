@@ -21,8 +21,6 @@ row_number=1
   # Loop through each line in the input file
   while IFS=, read -r pdf_name pdf_path; do
     # Remove surrounding quotes from the pdf_path
-    # pdf_path=$(echo "$pdf_path" | tr -d '"')
-    # pdf_path=$(echo "$pdf_path" | tr -d '"' | tr -d '\n')
     if [[ "$pdf_name" = *"Expired"* ]]; then
       continue # Skip this line if "SQB" is not in pdf_name
     fi
@@ -32,10 +30,6 @@ row_number=1
     if [[ -z "$exp_date" ]]; then
         continue
     fi 
-    # today_date=$(date +%Y%m%d)
-    # exp_epoch=$(date -d "$exp_date" +%s)
-    # today_epoch=$(date +%s)
-    # next_month_epoch=$(date -d "+30 days" +%s)
     exp_epoch=$(date -j -f "%Y%m%d" "$exp_date" "+%s")
     today_epoch=$(date "+%s")
     next_month_epoch=$(date -v+30d "+%s")
