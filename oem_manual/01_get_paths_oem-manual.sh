@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+source /usr/local/bin/bash_colors.sh
+
+if ! mount | grep -q WL-SL ; then
+    echo -e "${RED}The mount /Volumes/WL-SL/ not available${NC}"
+    exit 1
+fi 
+
+# What is the code doing while this lag
+search_dir="/Volumes/WL-SL/02 Slickline/.dot-files/manuals/"
+
+# Set the output file
+output_file="pdf_list_oem-manual.txt"
+
+# Configure exclusions
+
+# Clear the output file if it already exists
+>"$output_file"
+
+# Build the find command with dynamic exclusions
+find_cmd="find \"$search_dir\" -type f -name \"USER*.pdf\" -not -path \"*/EXPIRED/*\""
+
+# Recursively find all .pdf files and process them
+eval "$find_cmd" | while read -r file; do
+  # Get the file name without the .pdf extension
+  file_name=$(basename "$file" .pdf)
+
+  # Get the absolute path of the file
+  abs_path=$(realpath "$file")
+  # Append the file name and path to the output file
+  echo "$file_name,\"$abs_path\"" >>"$output_file"
+done
+
+echo -e "${GREEN}Results have been saved to $output_file${NC}"
