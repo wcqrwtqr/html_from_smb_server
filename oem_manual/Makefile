@@ -35,7 +35,7 @@ remove-files:
 # Target to remove specific files before starting the scripts
 remove-files_text:
 	cat ./header_oem-manual_tag.html ../partial-html_body/nav_tag.html \
-	./table_tag.html ./output_oem-manual.html ./part2.html \
+	./table_tag.html ./output_oem-manual.html ../partial-html_body/part2.html \
 	> final_oem-manual.html
 # rm -f ./pdf_list_oem-manual.txt ./output_oem-manual.html
 	rm -f ./output_oem-manual.html

@@ -43,9 +43,9 @@ row_number=1
     echo "  <tr>"
     echo "    <th scope=\"row\">$row_number</th>"
         if (( exp_epoch < today_epoch )); then
-        echo "    <td style='background-color:Tomato;'>$pdf_name</td>"
+        echo "    <td class="text-bg-danger">$pdf_name</td>"
     elif (( exp_epoch <= next_month_epoch )); then
-        echo "    <td style='background-color:Khaki;'>$pdf_name</td>"
+        echo "    <td class="text-bg-warning">$pdf_name</td>"
     else
         echo "    <td>$pdf_name</td>"
     fi

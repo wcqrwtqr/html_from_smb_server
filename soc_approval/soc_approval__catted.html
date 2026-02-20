@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -80,6 +80,9 @@
           <input id="searchInput" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
+        <button class="btn btn-outline-secondary ms-2" id="themeToggle">
+          🌙
+        </button>
       </div>
     </div>
   </nav>
@@ -102,21 +105,21 @@
 <tbody>
   <tr>
     <th scope="row">1</th>
-    <td style='background-color:Khaki;'>EXP 20260219 1747 North and south expat</td>
+    <td class=text-bg-danger>EXP 20260219 1747 North and south expat</td>
     <td>1747</td>
     <td>20260219</td>
     <td><a href="../05 WORK APPROVAL/تصاريح الدخوليه /Rumaila/Active/EXP 20260219 1747 North and south expat.pdf" target="_blank">link</a></td>
   </tr>
   <tr>
     <th scope="row">2</th>
-    <td style='background-color:Khaki;'>EXP 20260225 R-168 North and south</td>
+    <td class=text-bg-warning>EXP 20260225 R-168 North and south</td>
     <td>R-168</td>
     <td>20260225</td>
     <td><a href="../05 WORK APPROVAL/تصاريح الدخوليه /Rumaila/Active/EXP 20260225 R-168 North and south.pdf" target="_blank">link</a></td>
   </tr>
   <tr>
     <th scope="row">3</th>
-    <td style='background-color:Khaki;'>EXP 20260306 17076 32_تصريح رقم 17076_رميلة الجنوبية  أيوب</td>
+    <td class=text-bg-warning>EXP 20260306 17076 32_تصريح رقم 17076_رميلة الجنوبية  أيوب</td>
     <td>17076</td>
     <td>20260306</td>
     <td><a href="../05 WORK APPROVAL/تصاريح الدخوليه /Rumaila/Active/EXP 20260306 17076 32_تصريح رقم 17076_رميلة الجنوبية  أيوب.pdf" target="_blank">link</a></td>
@@ -217,5 +220,6 @@
   });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script type="text/javascript" src="./script/toggle-dark-mode.js"></script>
 </body>
 </html>

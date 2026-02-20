@@ -36,7 +36,7 @@ remove-files:
 remove-files_text:
 # cat ./part1.html ./output_roo_final_report.html ./part2.html > catted_output.html
 	cat ./header_final_report_tag.html ../partial-html_body/nav_tag.html \
-	./table_header_tag.html ./output_roo_final_report.html ./part2.html \
+	./table_header_tag.html ./output_roo_final_report.html ../partial-html_body/part2.html \
 	> catted_output.html
 	rm -f ./pdf_list_roo_final_report.txt ./output_roo_final_report.html
 	@echo "Removed pdf_list_roo_final.txt after finish"

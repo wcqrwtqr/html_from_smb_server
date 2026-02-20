@@ -38,7 +38,10 @@ remove-files:
 # Target to remove specific files before starting the scripts
 remove-files_text:
 # cat ./part1.html ./output_coc.html ./part2.html > catted_output.html
-	cat ./header_coc_tag.html ../partial-html_body/nav_tag.html ./table_header_tag.html ./output_coc.html ./part2.html > catted_output.html
+	cat ./header_coc_tag.html ../partial-html_body/nav_tag.html \
+	./table_header_tag.html ./output_coc.html ../partial-html_body/part2.html \
+	> catted_output.html
+	cp ./pdf_list_coc.txt ../html_asset_register/
 	rm -f ./pdf_list_coc.txt ./output_coc.html
 	@echo "Removed pdf_list_sls.txt after finish"
 	rm -f /Volumes/WL-SL/Webpage/sls_coc_nov.html

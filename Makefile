@@ -5,9 +5,9 @@
 
 # Define each subdirectory
 SUBDIRS = roo_sqb html_roo_final_report html_sls_certifcate html_coc \
-html_pce_ms html_asset_register html_peronnel_certification \
-work_approval main_page sgs_results ims_sop soc_approval roo_sop hse_sop \
-form_wl-sl form_qhse oem_manual
+html_pce_ms  html_peronnel_certification  work_approval \
+main_page sgs_results ims_sop soc_approval roo_sop hse_sop \
+form_wl-sl form_qhse oem_manual html_asset_register
 
 # Default target to build all subdirectories
 all: $(SUBDIRS)
