@@ -45,6 +45,7 @@ row_number=1
         # fi
         echo "    <td>$category</td>"
         echo "    <td>$rating</td>"
+        echo "    <td>$comment</td>"
         if grep -q "MPI.*${sn}" "${asset_list}"; then
             echo "    <td style='background-color:Green;'>MPI</td>"
         else
