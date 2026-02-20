@@ -19,7 +19,7 @@ run-all: remove-files 01_get_paths 02_genrate_html 03_sed_on_html
 
 # Target to remove specific files before starting the scripts
 remove-files:
-	rm -f ./output_certificate.html ./pdf_list_certificate.txt
+	rm -f ./output_ms.html ./pdf_list_ms.txt
 	@echo "Removed txt and html files"
 
 # Targets for each individual script
@@ -34,8 +34,10 @@ remove-files:
 
 # Target to remove specific files before starting the scripts
 remove-files_text:
-	cat ./header_certificate_tag.html ../partial-html_body/nav_tag.html ./table_tag.html ./output_certificate.html ../partial-html_body/part2.html > ./final_pce_ms_catted.html
-	rm -f ./pdf_list_certificate.txt ./output_certificate.html
+	cat ./header_certificate_tag.html ../partial-html_body/nav_tag.html \
+	./table_tag.html ./output_ms.html ../partial-html_body/part2.html \
+	> ./final_pce_ms_catted.html
+	rm -f ./pdf_list_ms.txt ./output_ms.html
 	@echo "Removed pdf_list_truck_maintenance.txt after finish"
 	rm -f /Volumes/WL-SL/Webpage/sls_pce_ms.html
 	cp ./final_pce_ms_catted.html /Volumes/WL-SL/Webpage/sls_pce_ms.html

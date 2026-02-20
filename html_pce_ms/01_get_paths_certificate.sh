@@ -10,13 +10,13 @@ fi
 search_dir="/Volumes/WL-SL/02 Slickline/02 Maintenance/PCE/"
 
 # Set the output file
-output_file="pdf_list_certificate.txt"
+output_file="pdf_list_ms.txt"
 
 # Clear the output file if it already exists
 >"$output_file"
 
 # Build the find command with dynamic exclusions
-find_cmd="find \"$search_dir\" -type f -name \"[0-9][0-9][0-9][0-9]*\" -not -path \"*/EXPIRED/*\""
+find_cmd="find \"$search_dir\" -type f -name \"[0-9][0-9][0-9][0-9]*MS-*[0-9]*\" -not -path \"*/EXPIRED/*\""
 
 # Recursively find all .pdf files and process them
 eval "$find_cmd" | while read -r file; do

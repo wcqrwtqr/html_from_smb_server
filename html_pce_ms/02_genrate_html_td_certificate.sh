@@ -2,8 +2,8 @@
 source /usr/local/bin/bash_colors.sh
 
 # Define the input file and output HTML file
-input_file="pdf_list_certificate.txt"
-output_file="output_certificate.html"
+input_file="pdf_list_ms.txt"
+output_file="output_ms.html"
 
 if [[ ! -f "$input_file" ]]; then
     echo -e "${RED}The $input_file is not available${NC}"
