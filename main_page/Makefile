@@ -25,7 +25,6 @@ run-all: 01_get_anlysis_data
 remove-files_text:
 	cat ../partial-html_body/index_header.html ../partial-html_body/nav_tag.html \
 	../partial-html_body/index_footer_a.html ./table_head_tag.html ./table_data.html \
-	../work_approval/table_tag_for_main_page.html ../work_approval/output_work_approval.html \
 	../partial-html_body/index_footer_b.html > ./catted_index_analysis.html
 
 	rm -f /Volumes/WL-SL/Webpage/index.html ./table_data.html
@@ -36,5 +35,6 @@ remove-files_text:
 	@echo "==================Updated index with analysis================="
 	@echo "=============================================================="
 
+# 	../work_approval/table_tag_for_main_page.html ../work_approval/output_work_approval.html \
 
 

@@ -50,6 +50,7 @@ final2_count26=$(find "/Volumes/WL-SL/02 Slickline/01 Jobs/BECL BP/Unit2/Daily R
     echo "    <td>$final2_count25</td>"
     echo "    <td>$final2_count26</td>"
     echo "  </tr>"
+    echo "</tbody>"
     
 } >> ./table_data.html 
 

@@ -26,7 +26,7 @@
             </a>
             <ul class="dropdown-menu">
               <!-- <li><a class="dropdown-item" href="./assets_register.html">Asset register</a></li> -->
-              <li><a class="dropdown-item" href="./sls_OEM.html">OEM Document</a></li>
+              <!-- <li><a class="dropdown-item" href="./sls_OEM.html">OEM Document</a></li> -->
               <li><a class="dropdown-item" href="./all-certificate.html">SLS Certification</a></li>
               <li><a class="dropdown-item" href="./sls_pce_ms.html">SLS MS Sheet</a></li>
               <li><a class="dropdown-item" href="./sls_coc_nov.html">NOV COC</a></li>
@@ -87,20 +87,30 @@
     </div>
   </nav>
 
-    <div class="container">
-      <!-- Content here -->
-      <h1>Personnel Certification</h1>
+<div class="container">
+  <!-- Content here -->
+  <h1>Personnel Certification</h1>
 
-      <table class="table" id="pdfTable">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Doc name</th>
-            <th scope="col">Type</th>
-            <th scope="col">Expiry</th>
-            <th scope="col">Link</th>
-          </tr>
-        </thead>
+  <div class="mb-3">
+    <label for="colorFilter" class="form-label">Filter by Status:</label>
+    <select id="colorFilter" class="form-select w-auto">
+      <option value="all">Show All</option>
+      <option value="warning">Warning (Yellow)</option>
+      <option value="normal">Normal (No Color)</option>
+    </select>
+  </div>
+
+
+  <table class="table" id="pdfTable">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Doc name</th>
+        <th scope="col">Type</th>
+        <th scope="col">Expiry</th>
+        <th scope="col">Link</th>
+      </tr>
+    </thead>
 <tbody>
   <tr>
     <th scope="row">1</th>
@@ -454,7 +464,7 @@
   </tr>
   <tr>
     <th scope="row">51</th>
-    <td class=text-bg-warning>EXP 20260221 FA Aziz Mazel</td>
+    <td class=text-bg-danger>EXP 20260221 FA Aziz Mazel</td>
     <td>FA</td>
     <td>20260221</td>
     <td><a href="../02 Slickline/.Personnel/Aziz Mazel/EXP 20260221 FA Aziz Mazel.pdf" target="_blank">link</a></td>
@@ -629,7 +639,7 @@
   </tr>
   <tr>
     <th scope="row">76</th>
-    <td>EXP 20260323 WAH Haider Jawad</td>
+    <td class=text-bg-warning>EXP 20260323 WAH Haider Jawad</td>
     <td>WAH</td>
     <td>20260323</td>
     <td><a href="../02 Slickline/.Personnel/Haider Jawad/EXP 20260323 WAH Haider Jawad.pdf" target="_blank">link</a></td>
@@ -1462,28 +1472,28 @@
   </tr>
   <tr>
     <th scope="row">195</th>
-    <td>EXP 20260323 FA Wesam Cheyad</td>
+    <td class=text-bg-warning>EXP 20260323 FA Wesam Cheyad</td>
     <td>FA</td>
     <td>20260323</td>
     <td><a href="../02 Slickline/.Personnel/Wesam Cheyad/EXP 20260323 FA Wesam Cheyad.pdf" target="_blank">link</a></td>
   </tr>
   <tr>
     <th scope="row">196</th>
-    <td>EXP 20260323 FF Wesam Cheyad</td>
+    <td class=text-bg-warning>EXP 20260323 FF Wesam Cheyad</td>
     <td>FF</td>
     <td>20260323</td>
     <td><a href="../02 Slickline/.Personnel/Wesam Cheyad/EXP 20260323 FF Wesam Cheyad.pdf" target="_blank">link</a></td>
   </tr>
   <tr>
     <th scope="row">197</th>
-    <td>EXP 20260323 H2S Wesam Cheyad</td>
+    <td class=text-bg-warning>EXP 20260323 H2S Wesam Cheyad</td>
     <td>H2S</td>
     <td>20260323</td>
     <td><a href="../02 Slickline/.Personnel/Wesam Cheyad/EXP 20260323 H2S Wesam Cheyad.pdf" target="_blank">link</a></td>
   </tr>
   <tr>
     <th scope="row">198</th>
-    <td>EXP 20260323 WAH Wesam Chyad</td>
+    <td class=text-bg-warning>EXP 20260323 WAH Wesam Chyad</td>
     <td>WAH</td>
     <td>20260323</td>
     <td><a href="../02 Slickline/.Personnel/Wesam Cheyad/EXP 20260323 WAH Wesam Chyad.pdf" target="_blank">link</a></td>
@@ -1536,5 +1546,7 @@
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script type="text/javascript" src="./script/toggle-dark-mode.js"></script>
+<script type="text/javascript" src="./script/certificate-filter-by-color.js"></script>
+
 </body>
 </html>

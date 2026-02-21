@@ -1,14 +1,24 @@
-    <div class="container">
-      <!-- Content here -->
-      <h1>Personnel Certification</h1>
+<div class="container">
+  <!-- Content here -->
+  <h1>Personnel Certification</h1>
 
-      <table class="table" id="pdfTable">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Doc name</th>
-            <th scope="col">Type</th>
-            <th scope="col">Expiry</th>
-            <th scope="col">Link</th>
-          </tr>
-        </thead>
+  <div class="mb-3">
+    <label for="colorFilter" class="form-label">Filter by Status:</label>
+    <select id="colorFilter" class="form-select w-auto">
+      <option value="all">Show All</option>
+      <option value="warning">Warning (Yellow)</option>
+      <option value="normal">Normal (No Color)</option>
+    </select>
+  </div>
+
+
+  <table class="table" id="pdfTable">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Doc name</th>
+        <th scope="col">Type</th>
+        <th scope="col">Expiry</th>
+        <th scope="col">Link</th>
+      </tr>
+    </thead>
