@@ -87,43 +87,82 @@
     </div>
   </nav>
 
-    <div class="container">
-      <!-- Content here -->
-      <h1>Slickline Certificate Documents</h1>
+<div class="container">
+  <!-- Content here -->
+  <h1>Slickline Certificate Documents</h1>
 
-      <div class="row mb-3">
-        <!-- Color Filter (Single Select) -->
-        <div class="col-md-3">
-          <label class="form-label">Status</label>
-          <select id="colorFilter" class="form-select">
-            <option value="all">All</option>
-            <option value="text-bg-warning">Warning️</option>
-            <!-- <option value="text-bg-success">Success</option> -->
-            <!-- <option value="text-bg-info">Info</option> -->
-            <option value="text-bg-danger">Expired</option>
-            <option value="no-color">No Color</option>
-          </select>
+  <div class="row mb-3">
+    <!-- Color Filter (Single Select) -->
+    <div class="col-md-3">
+      <label class="form-label">Status</label>
+      <select id="colorFilter" class="form-select">
+        <option value="all">All</option>
+        <option value="text-bg-warning">Warning️</option>
+        <!-- <option value="text-bg-success">Success</option> -->
+        <!-- <option value="text-bg-info">Info</option> -->
+        <option value="text-bg-danger">Expired</option>
+        <option value="no-color">No Color</option>
+      </select>
+    </div>
+
+    <!-- Name / Asset Search -->
+    <div class="col-md-4">
+      <label class="form-label">Search</label>
+      <input type="text" id="nameFilter" class="form-control" placeholder="Type asset...">
+    </div>
+
+  </div>
+  <div class="row mb-3 text-center">
+
+    <div class="col">
+      <div class="card border-secondary">
+        <div class="card-body p-2">
+          <small>Total</small>
+          <h6 id="totalCount" class="mb-0">0</h6>
         </div>
-
-        <!-- Name / Asset Search -->
-        <div class="col-md-4">
-          <label class="form-label">Search</label>
-          <input type="text" id="nameFilter" class="form-control" placeholder="Type asset...">
-        </div>
-
       </div>
+    </div>
 
-      <table class="table" id="pdfTable">
+    <div class="col">
+      <div class="card border-primary">
+        <div class="card-body p-2">
+          <small>Showing</small>
+          <h6 id="showingCount" class="mb-0">0</h6>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card border-warning">
+        <div class="card-body p-2">
+          <small>Warning</small>
+          <h6 id="warningCount" class="mb-0 text-warning">0</h6>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card border-danger">
+        <div class="card-body p-2">
+          <small>Expired</small>
+          <h6 id="dangerCount" class="mb-0 text-danger">0</h6>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <table class="table" id="pdfTable">
     <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Doc name</th>
-            <!-- <th scope="col">Made</th> -->
-            <th scope="col">Date</th>
-            <th scope="col">Type</th>
-            <th scope="col">Link</th>
-          </tr>
-        </thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Doc name</th>
+        <!-- <th scope="col">Made</th> -->
+        <th scope="col">Date</th>
+        <th scope="col">Type</th>
+        <th scope="col">Link</th>
+      </tr>
+    </thead>
 <tbody>
   <tr>
     <th scope="row">1</th>
