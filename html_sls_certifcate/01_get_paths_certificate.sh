@@ -22,7 +22,7 @@ output_file="pdf_list_certificate.txt"
 >"$output_file"
 
 # Build the find command with dynamic exclusions
-find_cmd="find \"$search_dir\" -type f -name \"EXP*\" -not -path \"*/EXPIRED/*\""
+find_cmd="find \"$search_dir\" -type f -name \"EXP*.pdf\" -not -path \"*/EXPIRED/*\""
 # for dir in $excluded_dirs; do
 #   find_cmd="$find_cmd -not -path \"*/$dir/*\""
 # done

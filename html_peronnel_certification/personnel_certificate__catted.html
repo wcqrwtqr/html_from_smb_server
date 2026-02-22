@@ -91,15 +91,27 @@
   <!-- Content here -->
   <h1>Personnel Certification</h1>
 
-  <div class="mb-3">
-    <label for="colorFilter" class="form-label">Filter by Status:</label>
-    <select id="colorFilter" class="form-select w-auto">
-      <option value="all">Show All</option>
-      <option value="warning">Warning (Yellow)</option>
-      <option value="normal">Normal (No Color)</option>
-    </select>
-  </div>
+      <div class="row mb-3">
+        <!-- Color Filter (Single Select) -->
+        <div class="col-md-3">
+          <label class="form-label">Status</label>
+          <select id="colorFilter" class="form-select">
+            <option value="all">All</option>
+            <option value="text-bg-warning">Warning️</option>
+            <!-- <option value="text-bg-success">Success</option> -->
+            <!-- <option value="text-bg-info">Info</option> -->
+            <option value="text-bg-danger">Expired</option>
+            <option value="no-color">No Color</option>
+          </select>
+        </div>
 
+        <!-- Name / Asset Search -->
+        <div class="col-md-4">
+          <label class="form-label">Search</label>
+          <input type="text" id="nameFilter" class="form-control" placeholder="Type asset...">
+        </div>
+
+      </div>
 
   <table class="table" id="pdfTable">
     <thead>
@@ -457,7 +469,7 @@
   </tr>
   <tr>
     <th scope="row">50</th>
-    <td class=text-bg-warning>EXP 20260221 Banksman Aziz Mezal</td>
+    <td class=text-bg-danger>EXP 20260221 Banksman Aziz Mezal</td>
     <td>Banksman</td>
     <td>20260221</td>
     <td><a href="../02 Slickline/.Personnel/Aziz Mazel/EXP 20260221 Banksman Aziz Mezal.pdf" target="_blank">link</a></td>
@@ -471,21 +483,21 @@
   </tr>
   <tr>
     <th scope="row">52</th>
-    <td class=text-bg-warning>EXP 20260221 FF Aziz Mezhel</td>
+    <td class=text-bg-danger>EXP 20260221 FF Aziz Mezhel</td>
     <td>FF</td>
     <td>20260221</td>
     <td><a href="../02 Slickline/.Personnel/Aziz Mazel/EXP 20260221 FF Aziz Mezhel.pdf" target="_blank">link</a></td>
   </tr>
   <tr>
     <th scope="row">53</th>
-    <td class=text-bg-warning>EXP 20260221 H2S-SCBA Aziz Mezhel</td>
+    <td class=text-bg-danger>EXP 20260221 H2S-SCBA Aziz Mezhel</td>
     <td>H2S-SCBA</td>
     <td>20260221</td>
     <td><a href="../02 Slickline/.Personnel/Aziz Mazel/EXP 20260221 H2S-SCBA Aziz Mezhel.pdf" target="_blank">link</a></td>
   </tr>
   <tr>
     <th scope="row">54</th>
-    <td class=text-bg-warning>EXP 20260221 WAH Aziz Mazhel</td>
+    <td class=text-bg-danger>EXP 20260221 WAH Aziz Mazhel</td>
     <td>WAH</td>
     <td>20260221</td>
     <td><a href="../02 Slickline/.Personnel/Aziz Mazel/EXP 20260221 WAH Aziz Mazhel.pdf" target="_blank">link</a></td>
@@ -856,28 +868,28 @@
   </tr>
   <tr>
     <th scope="row">107</th>
-    <td class=text-bg-warning>EXP 20260221 FA Kazim Mutashar</td>
+    <td class=text-bg-danger>EXP 20260221 FA Kazim Mutashar</td>
     <td>FA</td>
     <td>20260221</td>
     <td><a href="../02 Slickline/.Personnel/Kazim Mutasher/EXP 20260221 FA Kazim Mutashar.pdf" target="_blank">link</a></td>
   </tr>
   <tr>
     <th scope="row">108</th>
-    <td class=text-bg-warning>EXP 20260221 FF Kazim Mutashar</td>
+    <td class=text-bg-danger>EXP 20260221 FF Kazim Mutashar</td>
     <td>FF</td>
     <td>20260221</td>
     <td><a href="../02 Slickline/.Personnel/Kazim Mutasher/EXP 20260221 FF Kazim Mutashar.pdf" target="_blank">link</a></td>
   </tr>
   <tr>
     <th scope="row">109</th>
-    <td class=text-bg-warning>EXP 20260221 H2S Kazim Mutashar</td>
+    <td class=text-bg-danger>EXP 20260221 H2S Kazim Mutashar</td>
     <td>H2S</td>
     <td>20260221</td>
     <td><a href="../02 Slickline/.Personnel/Kazim Mutasher/EXP 20260221 H2S Kazim Mutashar.pdf" target="_blank">link</a></td>
   </tr>
   <tr>
     <th scope="row">110</th>
-    <td class=text-bg-warning>EXP 20260221 WAH Kazim Mutashar</td>
+    <td class=text-bg-danger>EXP 20260221 WAH Kazim Mutashar</td>
     <td>WAH</td>
     <td>20260221</td>
     <td><a href="../02 Slickline/.Personnel/Kazim Mutasher/EXP 20260221 WAH Kazim Mutashar.pdf" target="_blank">link</a></td>
@@ -947,28 +959,28 @@
   </tr>
   <tr>
     <th scope="row">120</th>
-    <td class=text-bg-warning>EXP 20260221 FA Majid Yaqoob</td>
+    <td class=text-bg-danger>EXP 20260221 FA Majid Yaqoob</td>
     <td>FA</td>
     <td>20260221</td>
     <td><a href="../02 Slickline/.Personnel/Majid Yaqoob/EXP 20260221 FA Majid Yaqoob.pdf" target="_blank">link</a></td>
   </tr>
   <tr>
     <th scope="row">121</th>
-    <td class=text-bg-warning>EXP 20260221 FF Majid Yaqoob</td>
+    <td class=text-bg-danger>EXP 20260221 FF Majid Yaqoob</td>
     <td>FF</td>
     <td>20260221</td>
     <td><a href="../02 Slickline/.Personnel/Majid Yaqoob/EXP 20260221 FF Majid Yaqoob.pdf" target="_blank">link</a></td>
   </tr>
   <tr>
     <th scope="row">122</th>
-    <td class=text-bg-warning>EXP 20260221 H2S Majid Yaqoob</td>
+    <td class=text-bg-danger>EXP 20260221 H2S Majid Yaqoob</td>
     <td>H2S</td>
     <td>20260221</td>
     <td><a href="../02 Slickline/.Personnel/Majid Yaqoob/EXP 20260221 H2S Majid Yaqoob.pdf" target="_blank">link</a></td>
   </tr>
   <tr>
     <th scope="row">123</th>
-    <td class=text-bg-warning>EXP 20260221 WAH Majid Yaqoob</td>
+    <td class=text-bg-danger>EXP 20260221 WAH Majid Yaqoob</td>
     <td>WAH</td>
     <td>20260221</td>
     <td><a href="../02 Slickline/.Personnel/Majid Yaqoob/EXP 20260221 WAH Majid Yaqoob.pdf" target="_blank">link</a></td>
@@ -1073,28 +1085,28 @@
   </tr>
   <tr>
     <th scope="row">138</th>
-    <td class=text-bg-warning>EXP 20260221 FA Mahdi Mohammed</td>
+    <td class=text-bg-danger>EXP 20260221 FA Mahdi Mohammed</td>
     <td>FA</td>
     <td>20260221</td>
     <td><a href="../02 Slickline/.Personnel/Mehdi Muhammad/EXP 20260221 FA Mahdi Mohammed.pdf" target="_blank">link</a></td>
   </tr>
   <tr>
     <th scope="row">139</th>
-    <td class=text-bg-warning>EXP 20260221 FF Mahdi Mohammed</td>
+    <td class=text-bg-danger>EXP 20260221 FF Mahdi Mohammed</td>
     <td>FF</td>
     <td>20260221</td>
     <td><a href="../02 Slickline/.Personnel/Mehdi Muhammad/EXP 20260221 FF Mahdi Mohammed.pdf" target="_blank">link</a></td>
   </tr>
   <tr>
     <th scope="row">140</th>
-    <td class=text-bg-warning>EXP 20260221 H2S Mahdi Mohammad</td>
+    <td class=text-bg-danger>EXP 20260221 H2S Mahdi Mohammad</td>
     <td>H2S</td>
     <td>20260221</td>
     <td><a href="../02 Slickline/.Personnel/Mehdi Muhammad/EXP 20260221 H2S Mahdi Mohammad.pdf" target="_blank">link</a></td>
   </tr>
   <tr>
     <th scope="row">141</th>
-    <td class=text-bg-warning>EXP 20260221 WAH Mahdi Mohammad</td>
+    <td class=text-bg-danger>EXP 20260221 WAH Mahdi Mohammad</td>
     <td>WAH</td>
     <td>20260221</td>
     <td><a href="../02 Slickline/.Personnel/Mehdi Muhammad/EXP 20260221 WAH Mahdi Mohammad.pdf" target="_blank">link</a></td>
@@ -1523,27 +1535,7 @@
 </table>
 </div>
 
-<script>
-  document.getElementById("searchForm").addEventListener("submit", function(event) {
-      event.preventDefault();
-
-      const searchTerm = document.getElementById("searchInput").value.toLowerCase();
-      const rows = document.querySelectorAll("#pdfTable tbody tr");
-
-      rows.forEach(row => {
-          // Get text from ALL columns
-          const rowText = Array.from(row.querySelectorAll("td"))
-                .map(td => td.textContent.toLowerCase())
-                .join(" ");
-
-          if (rowText.includes(searchTerm)) {
-              row.style.display = "";
-          } else {
-              row.style.display = "none";
-          }
-      });
-  });
-</script>
+<script type="text/javascript" src="./script/search-nav-filed.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script type="text/javascript" src="./script/toggle-dark-mode.js"></script>
 <script type="text/javascript" src="./script/certificate-filter-by-color.js"></script>

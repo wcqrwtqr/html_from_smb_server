@@ -34,8 +34,12 @@ row_number=1
     today_epoch=$(date "+%s")
     next_month_epoch=$(date -v+30d "+%s")
 
-    # year=$(echo "$pdf_name" | grep -oE '[0-9]{4}' | tr -d '\n' | cut -c 1-4)
-    # month=$(echo "$pdf_name" | grep -oE '[0-9]{4}' | tr -d '\n' | cut -c 5-6)
+    year=$(echo "$pdf_name" | grep -oE '[0-9]{4}' | tr -d '\n' | cut -c 1-4)
+    month=$(echo "$pdf_name" | grep -oE '[0-9]{4}' | tr -d '\n' | cut -c 5-6)
+    thedaty=$(echo "$pdf_name" | grep -oE '[0-9]{4}' | tr -d '\n' | cut -c 7-8)
+
+    cert_type=$(echo "$pdf_name" | awk '{print $3}')
+
 
     # Output the formatted HTML row
     echo "  <tr>"
@@ -48,7 +52,8 @@ row_number=1
     else
         echo "    <td>$pdf_name</td>"
     fi
-    echo "    <td>Certificate</td>"
+    echo "    <td>$year-$month-$thedaty</td>"
+    echo "    <td>${cert_type}</td>"
     echo "    <td><a href=\"$pdf_path\" target=\"_blank\">link</a></td>"
     echo "  </tr>"
 
