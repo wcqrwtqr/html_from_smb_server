@@ -27,12 +27,13 @@ row_number=1
       continue # Skip this line if "SQB" is not in pdf_name
     fi
     pdf_path=$(echo "$pdf_path" | tr -d '"')
+    ms_type=$(echo "$pdf_name"| awk '{print $2}')
 
     # Output the formatted HTML row
     echo "  <tr>"
     echo "    <th scope=\"row\">$row_number</th>"
     echo "    <td>$pdf_name</td>"
-    echo "    <td>Maintenance</td>"
+    echo "    <td>$ms_type</td>"
     echo "    <td><a href=\"$pdf_path\" target=\"_blank\">link</a></td>"
     echo "  </tr>"
 

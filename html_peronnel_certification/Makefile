@@ -43,6 +43,7 @@ remove-files_text:
 	./output_personnel_certificate.html ../partial-html_body/part2.html > \
 	./personnel_certificate__catted.html
 
+	cp -f ./pdf_list_personnel.txt ../html_personnel_register/
 	rm -f ./pdf_list_personnel.txt ./output_personnel_certificate.html
 	@echo -e "Removed pdf_list_personnel.txt after finish"
 	rm -f /Volumes/WL-SL/Webpage/personnel_certificaiton.html

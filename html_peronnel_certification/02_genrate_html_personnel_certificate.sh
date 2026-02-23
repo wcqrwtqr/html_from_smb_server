@@ -30,6 +30,9 @@ row_number=1
     # Split the $2 and $3 which si the exp date, and certifiate type
     exp_date=$(echo "$pdf_name" | awk '{print $2}')
     cert_type=$(echo "$pdf_name" | awk '{print $3}')
+    year=$(echo "$pdf_name" | grep -oE '[0-9]{4}' | tr -d '\n' | cut -c 1-4)
+    month=$(echo "$pdf_name" | grep -oE '[0-9]{4}' | tr -d '\n' | cut -c 5-6)
+    thedaty=$(echo "$pdf_name" | grep -oE '[0-9]{4}' | tr -d '\n' | cut -c 7-8)
 
     if [[ -z "$exp_date" ]]; then
         continue
@@ -50,7 +53,8 @@ row_number=1
         echo "    <td>$pdf_name</td>"
     fi
     echo "    <td>$cert_type</td>"
-    echo "    <td>$exp_date</td>"
+    echo "    <td>$year-$month-$thedaty</td>"
+    # echo "    <td>$exp_date</td>"
     echo "    <td><a href=\"$pdf_path\" target=\"_blank\">link</a></td>"
     echo "  </tr>"
 
