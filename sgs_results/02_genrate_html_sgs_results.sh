@@ -41,8 +41,9 @@ row_number=1
         # Increment the row counter
         ((row_number++))
     done <"$input_file_u1"
-
     echo "</tbody>"
+    echo "<tfoot id="tableFooter" class="table-group-divider"></tfoot>"
 } >"$output_file_u1"
+
 
 echo -e "${YELLOW}HTML rows generated in $output_file_u1${NC}"

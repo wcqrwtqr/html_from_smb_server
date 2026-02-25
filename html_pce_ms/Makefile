@@ -35,7 +35,7 @@ remove-files:
 # Target to remove specific files before starting the scripts
 remove-files_text:
 	cat ./header_certificate_tag.html ../partial-html_body/nav_tag.html \
-	./table_tag.html ./output_ms.html ../partial-html_body/part2.html \
+	./table_tag.html ./output_ms.html ./part2.html \
 	> ./final_pce_ms_catted.html
 	rm -f ./pdf_list_ms.txt ./output_ms.html
 	@echo "Removed pdf_list_truck_maintenance.txt after finish"

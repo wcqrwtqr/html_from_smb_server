@@ -2,65 +2,81 @@
   <!-- Content here -->
   <h1>Slickline Maintenance Documents</h1>
   <div class="row mb-3">
-    <!-- Color Filter (Single Select) -->
-    <div class="col-md-3">
-      <label class="form-label">Status</label>
-      <select id="colorFilter" class="form-select">
-        <option value="all">All</option>
-        <option value="text-bg-warning">Warning️</option>
-        <!-- <option value="text-bg-success">Success</option> -->
-        <!-- <option value="text-bg-info">Info</option> -->
-        <option value="text-bg-danger">Expired</option>
-        <option value="no-color">No Color</option>
-      </select>
+
+    <div class="row mb-3">
+      <div class="col-md-3">
+        <label class="form-label">Status Filter</label>
+        <select id="colorFilter" class="form-select">
+          <option value="all">All Equipment</option>
+          <option value="text-bg-success">Valid (Green)</option>
+          <option value="text-bg-warning">Warning (Yellow)</option>
+          <option value="text-bg-danger">Expired (Red)</option>
+          <option value="text-bg-secondary">Outdated MS-1/2 (Gray)</option>
+        </select>
+      </div>
+
+      <div class="col-md-4">
+        <label class="form-label">Quick Search</label>
+        <input type="text" id="nameFilter" class="form-control" placeholder="Search Asset or MS Type...">
+      </div>
     </div>
 
-    <!-- Name / Asset Search -->
-    <div class="col-md-4">
-      <label class="form-label">Search</label>
-      <input type="text" id="nameFilter" class="form-control" placeholder="Type asset...">
-    </div>
-
-  </div>
-  <div class="row mb-3 text-center">
-
-    <div class="col">
-      <div class="card border-secondary">
-        <div class="card-body p-2">
-          <small>Total</small>
-          <h6 id="totalCount" class="mb-0">0</h6>
+        <div class="row mb-3 text-center">
+      <div class="col">
+        <div class="card border-success">
+          <div class="card-body p-2">
+            <small>Valid</small>
+            <h6 id="successCount" class="mb-0 text-success">0</h6>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card border-secondary">
+          <div class="card-body p-2">
+            <small>Outdatd</small>
+            <h6 id="outdatedCount" class="mb-0 text-secondary">0</h6>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="col">
-      <div class="card border-primary">
-        <div class="card-body p-2">
-          <small>Showing</small>
-          <h6 id="showingCount" class="mb-0">0</h6>
+    <div class="row mb-3 text-center">
+      <div class="col">
+        <div class="card border-secondary">
+          <div class="card-body p-2">
+            <small>Total</small>
+            <h6 id="totalCount" class="mb-0">0</h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card border-primary">
+          <div class="card-body p-2">
+            <small>Showing</small>
+            <h6 id="showingCount" class="mb-0">0</h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card border-warning">
+          <div class="card-body p-2">
+            <small>Warning</small>
+            <h6 id="warningCount" class="mb-0 text-warning">0</h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card border-danger">
+          <div class="card-body p-2">
+            <small>Expired</small>
+            <h6 id="dangerCount" class="mb-0 text-danger">0</h6>
+          </div>
         </div>
       </div>
     </div>
-
-    <div class="col">
-      <div class="card border-warning">
-        <div class="card-body p-2">
-          <small>Warning</small>
-          <h6 id="warningCount" class="mb-0 text-warning">0</h6>
-        </div>
-      </div>
-    </div>
-
-    <div class="col">
-      <div class="card border-danger">
-        <div class="card-body p-2">
-          <small>Expired</small>
-          <h6 id="dangerCount" class="mb-0 text-danger">0</h6>
-        </div>
-      </div>
-    </div>
-
-  </div>
 
   <table class="table" id="pdfTable">
     <thead>

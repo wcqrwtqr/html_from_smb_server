@@ -9,7 +9,10 @@
 .PHONY: run-all remove-files remove-files_text
 
 # Target to run all scripts in sequence
-run-all: remove-files 01_get_paths_personnel_certificate 02_genrate_html_personnel_certificate 03_sed_on_html_personnel_certificate
+run-all: remove-files 01_get_paths_personnel_certificate \
+	02_genrate_html_personnel_certificate \
+	03_sed_on_html_personnel_certificate
+
 	@echo "Running all scripts in sequence..."
 	./01_get_paths_work_approval.sh
 	./02_genrate_html_work_approval.sh
@@ -34,8 +37,10 @@ remove-files:
 
 # Target to remove specific files before starting the scripts
 remove-files_text:
-	cat ./header_work_approval_tag.html ../partial-html_body/nav_tag.html ./table_tag.html \
-	./output_work_approval.html ../partial-html_body/part2.html > ./work_approval__catted.html
+	cat ./header_work_approval_tag.html ../partial-html_body/nav_tag.html \
+	./table_tag.html ./output_work_approval.html \
+	../partial-html_body/part2.html > \
+	./work_approval__catted.html
 
 	rm -f ./pdf_list_work_approval.txt 
 	@echo "Removed pdf_list_work_approval.txt after finish"

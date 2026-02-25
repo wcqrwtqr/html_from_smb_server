@@ -34,8 +34,9 @@ remove-files:
 
 # Target to remove specific files before starting the scripts
 remove-files_text:
-	cat ./header_sgs_results_u1_tag.html ../partial-html_body/nav_tag.html ./table_tag.html \
-	./output_sgs_results_u1.html ../partial-html_body/part2.html > ./sgs_results_u1__catted.html
+	cat ./header_sgs_results_u1_tag.html ../partial-html_body/nav_tag.html \
+	./table_tag.html ./output_sgs_results_u1.html \
+	./part2.html > ./sgs_results_u1__catted.html
 
 	rm -f ./pdf_list_sgs_results_2026.txt 
 	@echo "Removed pdf_list_sgs_results_2026.txt after finish"
