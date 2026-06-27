@@ -1,0 +1,111 @@
+#!/usr/bin/env python3
+
+import os
+import subprocess
+import datetime
+import shutil
+
+# Configuration
+# SEARCH_DIR = "/Volumes/WL-SL/02 Slickline/02 Maintenance/"
+SEARCH_DIR = "/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/02 Slickline/02 Maintenance/"
+MOUNT_POINT = "/Volumes/My Passport for Mac/"
+OUTPUT_TXT = "pdf_list_certificate_python.txt"
+OUTPUT_HTML = "output_certificate_python.html"
+FINAL_HTML = "final_certificate_python.html"
+
+
+def check_mount():
+    """Check for the mount if available or not."""
+    if not os.path.ismount(MOUNT_POINT):
+        print(f"Error: {MOUNT_POINT} not available")
+        exit(1)
+
+
+def get_paths():
+    """Equivalent to 01_get_paths_certificate.sh."""
+    print("Searching for PDF files...")
+    results = []
+    # Using os.walk is the Pythonic way to 'find'
+    for root, dirs, files in os.walk(SEARCH_DIR):
+        if "EXPIRED" in root: # Exclude EXPIRED path
+            continue
+        for file in files:
+            if file.startswith("EXP") and file.endswith(".pdf"):
+                abs_path = os.path.abspath(os.path.join(root, file))
+                file_name_no_ext = os.path.splitext(file)[0]
+                results.append((file_name_no_ext, abs_path))
+    with open(OUTPUT_TXT, "w") as f:
+        for name, path in results:
+            f.write(f'{name},"{path}"\n')
+    return results
+
+
+def generate_html(data):
+    """Equivalent to 02_genrate_html_td_certificate.sh & 03_sed_on_html."""
+    print("Generating HTML...")
+    today = datetime.datetime.now()
+    next_month = today + datetime.timedelta(days=30)
+    rows = ["<tbody>"]
+    for i, (name, path) in enumerate(data, 1):
+        if "Expired" in name:
+            continue
+        # Parse date from filename (Assuming YYYYMMDD is the 2nd word)
+        parts = name.split()
+        if len(parts) < 2:
+            continue
+        try:
+            date_str = parts[1]
+            exp_date = datetime.datetime.strptime(date_str, "%Y%m%d")
+            cert_type = parts[2] if len(parts) > 2 else ""
+        except (ValueError, IndexError):
+            continue
+
+        # Logic for row styling
+        bg_class = ""
+        if exp_date < today:
+            bg_class = ' class="text-bg-danger"'
+        elif exp_date <= next_month:
+            bg_class = ' class="text-bg-warning"'
+
+        # Equivalent to the 'sed' command: replace mount path with '..'
+        # web_path = path.replace("/Volumes/WL-SL", "..")
+        web_path = path.replace("/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL", "..")
+
+        row = f"""  <tr>
+    <th scope="row">{i}</th>
+    <td{bg_class}>{name}</td>
+    <td>{exp_date.strftime('%Y-%m-%d')}</td>
+    <td>{cert_type}</td>
+    <td><a href="{web_path}" target="_blank">link</a></td>
+    </tr>"""
+        rows.append(row)
+    rows.append("</tbody>")
+    with open(OUTPUT_HTML, "w") as f:
+        f.write("\n".join(rows))
+
+
+def assemble_final():
+    """Equivalent to Makefile's remove-files_text target."""
+    # List of files to concatenate
+    files_to_merge = [
+        'header_certificate_tag.html',
+        '../partial-html_body/nav_tag.html',
+        './table_tag.html',
+        './output_certificate_python.html',
+        '../partial-html_body/part2.html'
+    ]
+    with open(FINAL_HTML, 'w') as outfile:
+        for fname in files_to_merge:
+            with open(fname) as infile:
+                outfile.write(infile.read())
+    # Deploy to server
+    # server_path = "/Volumes/WL-SL/Webpage/all-certificate.html"
+    # shutil.copy(FINAL_HTML, server_path)
+    print("Done! Webpage updated.")
+
+
+if __name__ == "__main__":
+    check_mount()
+    pdf_data = get_paths()
+    generate_html(pdf_data)
+    assemble_final()
