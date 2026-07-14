@@ -10,7 +10,7 @@ main_page sgs_results ims_sop soc_approval roo_sop hse_sop \
 form_wl-sl form_qhse oem_manual html_asset_register html_personnel_register
 
 # Default target to build all subdirectories
-all: $(SUBDIRS)
+all: $(SUBDIRS) ## Runa all make command in mentioned folders
 
 # Loop over each subdirectory and run its Makefile
 $(SUBDIRS):
