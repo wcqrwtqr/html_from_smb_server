@@ -27,9 +27,9 @@ remove-files_text:
 	../partial-html_body/index_footer_a.html ./table_head_tag.html ./table_data.html \
 	../partial-html_body/index_footer_b.html > ./catted_index_analysis.html
 
-	rm -f /Volumes/WL-SL/Webpage/index.html ./table_data.html
+	rm -f "/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/Webpage/index.html" ./table_data.html
 	@echo "Remove the inex page from webpage folder"
-	cp ./catted_index_analysis.html /Volumes/WL-SL/Webpage/index.html
+	cp ./catted_index_analysis.html "/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/Webpage/index.html"
 	@echo "Removed the webpage index.html and coppied the updated file in its place"
 	@echo "=============================================================="
 	@echo "==================Updated index with analysis================="

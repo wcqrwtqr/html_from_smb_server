@@ -1,15 +1,24 @@
 #!/usr/bin/env bash
 source /usr/local/bin/bash_colors.sh
 
-if ! mount | grep -q WL-SL ; then
-    echo -e "The mount /Volumes/WL-SL/ not available"
+## The code during my stay in NOES was moved from the smb server to my HD drive
+## so I can prototype it
+## The new path is as below in HD drive:
+# /Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/02 Slickline/01 Jobs/BECL BP/SQB/2024
+# if ! mount | grep -q WL-SL ; then 
+if ! mount | grep -q "My Passport for Mac" ; then
+    # echo -e "The mount /Volumes/WL-SL/ not available" ;; Old location of drive
+    echo -e "The mount /Volumes/My Passport for Mac/ not available"
     exit 1
 fi 
 
 # Set the directory to search in (change this to your specific folder)
-search_dir_2024="/Volumes/WL-SL/02 Slickline/01 Jobs/BECL BP/SQB/2024/"
-search_dir_2025="/Volumes/WL-SL/02 Slickline/01 Jobs/BECL BP/SQB/2025/"
-search_dir_2026="/Volumes/WL-SL/02 Slickline/01 Jobs/BECL BP/SQB/2026/"
+# search_dir_2024="/Volumes/WL-SL/02 Slickline/01 Jobs/BECL BP/SQB/2024/" # Old code 
+# search_dir_2025="/Volumes/WL-SL/02 Slickline/01 Jobs/BECL BP/SQB/2025/" # Old code
+# search_dir_2026="/Volumes/WL-SL/02 Slickline/01 Jobs/BECL BP/SQB/2026/" # Old code
+search_dir_2024="/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/02 Slickline/01 Jobs/BECL BP/SQB/2024/"
+search_dir_2025="/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/02 Slickline/01 Jobs/BECL BP/SQB/2025/"
+search_dir_2026="/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/02 Slickline/01 Jobs/BECL BP/SQB/2026/"
 # Search for 2024
 output_file_2024="pdf_list_roo_sqb_2024.txt"
 if [[ ! -s "$output_file_2024" ]]; then

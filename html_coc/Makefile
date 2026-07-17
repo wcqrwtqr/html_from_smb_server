@@ -9,7 +9,7 @@
 .PHONY: run-all remove-files remove-files_text
 
 # Target to run all scripts in sequence
-run-all: remove-files 01_get_paths 02_genrate_html 03_sed_on_html
+run-all: remove-files 00_get_dict_sn_desc 01_get_paths 02_genrate_html 03_sed_on_html
 	@echo "Running all scripts in sequence..."
 	./00_get_dict_sn_desc.sh
 	./01_get_paths.sh
@@ -44,9 +44,9 @@ remove-files_text:
 	cp ./pdf_list_coc.txt ../html_asset_register/
 	rm -f ./pdf_list_coc.txt ./output_coc.html
 	@echo "Removed pdf_list_sls.txt after finish"
-	rm -f /Volumes/WL-SL/Webpage/sls_coc_nov.html
+	rm -f "/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/Webpage/sls_coc_nov.html"
 	@echo "Removed pdf_list_sls.txt after finish"
-	cp ./catted_output.html /Volumes/WL-SL/Webpage/sls_coc_nov.html
+	cp ./catted_output.html "/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/Webpage/sls_coc_nov.html"
 	@echo "=============================================================="
 	@echo "================COC UPDATED UB WEBPAGE========================"
 	@echo "=============================================================="

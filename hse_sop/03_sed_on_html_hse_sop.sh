@@ -8,7 +8,7 @@ if [ ! -f "./output_hse_sop.html" ]; then
 fi
 
 # Attempt to run the sed command
-if ! sed -i '' 's|/Volumes/WL-SL|..|g' ./output_hse_sop.html ;then
+if ! sed -i '' 's|/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL|..|g' ./output_hse_sop.html ;then
     # sed returned a non-zero exit status, indicating an error
     echo -e "Error: sed failed to modify ${RED}./output_hse_sop.html${NC}'." >&2
     echo "Possible reasons:" >&2

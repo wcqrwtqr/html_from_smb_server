@@ -6,11 +6,11 @@ source /usr/local/bin/bash_colors.sh
 # txt file to be converted to html
 # 
 # Set the directory to search in (change this to your specific folder)
-if [[ ! -d "/Volumes/WL-SL/02 Slickline/.HSE SOP/" ]]; then
+if [[ ! -d "/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/02 Slickline/.HSE SOP/" ]]; then
     echo -e "${RED}The folder .HSE is not available${NC}"
     exit 1
 fi
-search_dir="/Volumes/WL-SL/02 Slickline/.HSE SOP/"
+search_dir="/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/02 Slickline/.HSE SOP/"
 
 # Set the output file
 output_file="pdf_list_hse_sop.txt"

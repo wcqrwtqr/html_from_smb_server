@@ -41,8 +41,10 @@ remove-files_text:
 	rm -f ./output_certificate.html
 	cp ./pdf_list_certificate.txt ../html_asset_register
 	@echo "Removed pdf_list_truck_maintenance.txt after finish"
-	rm -f /Volumes/WL-SL/Webpage/all-certificate.html
-	cp ./final_certificate.html /Volumes/WL-SL/Webpage/all-certificate.html
+	# rm -f /Volumes/WL-SL/Webpage/all-certificate.html
+	rm -f "/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/Webpage/all-certificate.html"
+	# cp ./final_certificate.html /Volumes/WL-SL/Webpage/all-certificate.html
+	cp ./final_certificate.html "/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/Webpage/all-certificate.html"
 	@echo "remove webpage all-certificate.html from server and replace it"
 	@echo "=============================================================="
 	@echo "=============CERTIFICATE UPDATED IN WEBPAGE==================="

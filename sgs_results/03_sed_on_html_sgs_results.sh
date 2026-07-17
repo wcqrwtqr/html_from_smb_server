@@ -11,7 +11,7 @@ if [ ! -f "$sed_file" ]; then
 fi
 
 # Attempt to run the sed command
-if ! sed -i '' 's|/Volumes/WL-SL|..|g' "$sed_file"; then
+if ! sed -i '' 's|/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL|..|g' "$sed_file"; then
     # sed returned a non-zero exit status, indicating an error
     echo "Error: sed failed to modify '$sed_file'." >&2
     echo "Possible reasons:" >&2

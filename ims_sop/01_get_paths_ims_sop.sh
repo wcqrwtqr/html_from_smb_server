@@ -6,11 +6,16 @@ source /usr/local/bin/bash_colors.sh
 # txt file to be converted to html
 # 
 # Set the directory to search in (change this to your specific folder)
-if [[ ! -d "/Volumes/WL-SL/02 Slickline/.IMS/" ]]; then
-    echo -e "${RED}The folder .IMS is not available${NC}"
+# if [[ ! -d "/Volumes/WL-SL/02 Slickline/.IMS/" ]]; then
+#     echo -e "${RED}The folder .IMS is not available${NC}"
+#     exit 1
+# fi
+if ! mount | grep -q "My Passport for Mac" ; then
+    echo -e "${RED}The mount /Volumes/My Passport for Mac/ not available${NC}"
     exit 1
-fi
-search_dir="/Volumes/WL-SL/02 Slickline/.IMS/NEOS SLS SOP/"
+fi 
+
+search_dir="/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/02 Slickline/.IMS/NEOS SLS SOP/"
 
 # Set the output file
 output_file="pdf_list_ims_sop.txt"

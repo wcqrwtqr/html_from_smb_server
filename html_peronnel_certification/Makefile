@@ -8,11 +8,11 @@
 .PHONY: run-all remove-files remove-files_text
 
 # Target to run all scripts in sequence
-run-all: remove-files 00_rsync_personnel_certificates \
-	01_get_paths_personnel_certificate 02_genrate_html_personnel_certificate \
+run-all: remove-files 01_get_paths_personnel_certificate \
+	02_genrate_html_personnel_certificate \
 	03_sed_on_html_personnel_certificate
 	@echo "Running all scripts in sequence..."
-	./00_rsync_personnel_certificates.sh
+	# ./00_rsync_personnel_certificates.sh
 	./01_get_paths_personnel_certificate.sh
 	./02_genrate_html_personnel_certificate.sh
 	./03_sed_on_html_personnel_certificate.sh
@@ -25,8 +25,8 @@ remove-files:
 	@echo "Removed txt and html files"
 
 # Targets for each individual script
-00_rsync_personnel_certificates:
-	chmod +x ./00_rsync_personnel_certificates.sh
+# 00_rsync_personnel_certificates:
+# 	chmod +x ./00_rsync_personnel_certificates.sh
 
 01_get_paths_personnel_certificate:
 	chmod +x ./01_get_paths_personnel_certificate.sh
@@ -46,8 +46,8 @@ remove-files_text:
 	cp -f ./pdf_list_personnel.txt ../html_personnel_register/
 	rm -f ./pdf_list_personnel.txt ./output_personnel_certificate.html
 	@echo -e "Removed pdf_list_personnel.txt after finish"
-	rm -f /Volumes/WL-SL/Webpage/personnel_certificaiton.html
-	cp ./personnel_certificate__catted.html /Volumes/WL-SL/Webpage/personnel_certificaiton.html
+	rm -f "/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/Webpage/personnel_certificaiton.html"
+	cp ./personnel_certificate__catted.html "/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/Webpage/personnel_certificaiton.html"
 	@echo "remove webpage all-certificate.html from server and replace it"
 	@echo "=============================================================="
 	@echo "=============Personnel Certificate Updated===================="

@@ -1,0 +1,6 @@
+#+title: Changelog
+
+* <2026-02-26 Thu> Last day in NEOS, stopped updating
+* <2026-07-17 Fri> Changed the path of the smb server to my HDD
+All the certificates were updated successfully and it shows 223 red and 260
+yellow

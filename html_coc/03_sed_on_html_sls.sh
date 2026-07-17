@@ -10,7 +10,7 @@ if [ ! -f "./output_coc.html" ]; then
 fi
 
 # Attempt to run the sed command
-if ! sed -i '' 's|/Volumes/WL-SL|..|g' ./output_coc.html; then
+if ! sed -i '' 's|/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL|..|g' ./output_coc.html; then
     # sed returned a non-zero exit status, indicating an error
     echo "Error: sed failed to modify 'output_coc.html'." >&2
     echo "Possible reasons:" >&2

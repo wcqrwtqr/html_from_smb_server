@@ -8,9 +8,9 @@
 .PHONY: run-all remove-files remove-files_text
 
 # Target to run all scripts in sequence
-run-all: remove-files 00_rsync_ims_sop 01_get_paths_ims_sop 02_generate_html_ims_sop 03_sed_on_html_ims_sop
+run-all: remove-files 01_get_paths_ims_sop 02_generate_html_ims_sop 03_sed_on_html_ims_sop
 	@echo "Running all scripts in sequence..."
-	./00_rsync_ims_sop.sh
+	# ./00_rsync_ims_sop.sh
 	./01_get_paths_ims_sop.sh
 	./02_genrate_html_ims_sop.sh
 	./03_sed_on_html_ims_sop.sh
@@ -23,8 +23,8 @@ remove-files:
 	@echo "Removed txt and html files"
 
 # Targets for each individual script
-00_rsync_ims_sop:
-	chmod +x ./00_rsync_ims_sop.sh
+# 00_rsync_ims_sop:
+# 	chmod +x ./00_rsync_ims_sop.sh
 
 01_get_paths_ims_sop:
 	chmod +x ./01_get_paths_ims_sop.sh
@@ -43,8 +43,8 @@ remove-files_text:
 
 	rm -f ./pdf_list_ims_sop.txt ./output_ims_sop.html
 	@echo -e "Removed pdf_list_ims_sop.txt after finish"
-	rm -f /Volumes/WL-SL/Webpage/noes_ims_sop.html
-	cp ./ims_sop__catted.html /Volumes/WL-SL/Webpage/noes_ims_sop.html
+	rm -f "/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/Webpage/noes_ims_sop.html"
+	cp ./ims_sop__catted.html "/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/Webpage/noes_ims_sop.html"
 	@echo "remove webpage IMS SOP updated.html from server and replace it"
 	@echo "=============================================================="
 	@echo "=============IMS SOP NOES UPDATED IN WEBPAGE=================="

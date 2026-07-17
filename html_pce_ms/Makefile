@@ -39,10 +39,9 @@ remove-files_text:
 	> ./final_pce_ms_catted.html
 	rm -f ./pdf_list_ms.txt ./output_ms.html
 	@echo "Removed pdf_list_truck_maintenance.txt after finish"
-	rm -f /Volumes/WL-SL/Webpage/sls_pce_ms.html
-	cp ./final_pce_ms_catted.html /Volumes/WL-SL/Webpage/sls_pce_ms.html
+	rm -f "/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/Webpage/sls_pce_ms.html"
+	cp ./final_pce_ms_catted.html "/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/Webpage/sls_pce_ms.html"
 	@echo "remove webpage all-certificate.html from server and replace it"
 	@echo "=============================================================="
 	@echo "===============MS sheet UPDATED IN WEBPAGE===================="
 	@echo "=============================================================="
-

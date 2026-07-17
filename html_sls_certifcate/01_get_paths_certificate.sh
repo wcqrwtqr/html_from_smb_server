@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 source /usr/local/bin/bash_colors.sh
 
-if ! mount | grep -q WL-SL ; then
-    echo -e "${RED}The mount /Volumes/WL-SL/ not available${NC}"
+if ! mount | grep -q "My Passport for Mac" ; then
+    echo -e "${RED}The mount /Volumes/My Passport for Mac/ not available${NC}"
     exit 1
 fi 
 
 # What is the code doing while this lag
-search_dir="/Volumes/WL-SL/02 Slickline/02 Maintenance/"
+search_dir="/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/02 Slickline/02 Maintenance/"
 
 # Set the output file
 output_file="pdf_list_certificate.txt"

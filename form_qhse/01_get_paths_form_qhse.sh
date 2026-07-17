@@ -5,7 +5,7 @@ source /usr/local/bin/bash_colors.sh
 # Extract the forms qhse from the folder .dot-files/form_qhse and generate the
 # txt file to be converted to html
  
-search_dir="/Volumes/WL-SL/02 Slickline/.dot-files/form_qhse/"
+search_dir="/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/02 Slickline/.dot-files/form_qhse/"
 
 # Set the directory to search in (change this to your specific folder)
 if [[ ! -d "${search_dir}" ]]; then

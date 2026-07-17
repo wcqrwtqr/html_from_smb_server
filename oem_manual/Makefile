@@ -41,8 +41,8 @@ remove-files_text:
 	rm -f ./output_oem-manual.html
 # cp ./pdf_list_oem-manual.txt ../html_asset_register
 	@echo "Removed pdf_list_truck_maintenance.txt after finish"
-	rm -f /Volumes/WL-SL/Webpage/oem_manual.html
-	cp ./final_oem-manual.html /Volumes/WL-SL/Webpage/oem_manual.html
+	rm -f "/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/Webpage/oem_manual.html"
+	cp ./final_oem-manual.html "/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/Webpage/oem_manual.html"
 	@echo "remove webpage all-oem-manual.html from server and replace it"
 	@echo "=============================================================="
 	@echo "=============OEM-MANUAL UPDATED IN WEBPAGE==================="

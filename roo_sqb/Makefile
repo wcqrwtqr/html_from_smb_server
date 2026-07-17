@@ -39,8 +39,8 @@ remove-files_text:
 	./part2.html > catted_sqb.html
 	rm -f ./pdf_list_roo_sqb.txt ./output_roo_sqb.html
 	@echo "Removed pdf_list_sls.txt after finish"
-	rm -f /Volumes/WL-SL/Webpage/ROO-SQB.html
-	cp ./catted_sqb.html /Volumes/WL-SL/Webpage/ROO-SQB.html
+	rm -f "/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/Webpage/ROO-SQB.html"
+	cp ./catted_sqb.html  "/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/Webpage/ROO-SQB.html" 
 	@echo "Removed the webpage sls_sqb.html and coppied the updated file in its place"
 	@echo "=============================================================="
 	@echo "==================SQB UPDATED IN WEBPAGE======================"

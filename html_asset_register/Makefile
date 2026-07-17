@@ -30,9 +30,9 @@ remove-files_text:
 	./table_tag.html ./assets_table.html ./part2.html > ./final_asset_page.html
 	rm -f ./assets_table.html ./pdf_list_asset_db.txt
 	@echo "Removed pdf_list_list_db.txt after finish"
-	rm -f /Volumes/WL-SL/Webpage/assets_register.html /Volumes/WL-SL/Webpage/script/asset-register-filter.js
-	cp ./script/asset-register-filter.js /Volumes/WL-SL/Webpage/script/asset-register-filter.js
-	cp ./final_asset_page.html /Volumes/WL-SL/Webpage/assets_register.html
+	rm -f "/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/Webpage/assets_register.html" "/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/Webpage/script/asset-register-filter.js"
+	cp ./script/asset-register-filter.js "/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/Webpage/script/asset-register-filter.js" 
+	cp ./final_asset_page.html "/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/Webpage/assets_register.html" 
 	@echo "remove webpage assets_register.html from server and replace it"
 	@echo "=============================================================="
 	@echo "==================Asset UPDATED IN WEBPAGE===================="

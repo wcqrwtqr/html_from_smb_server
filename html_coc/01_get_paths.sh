@@ -1,14 +1,18 @@
 #!/usr/bin/env bash
 source /usr/local/bin/bash_colors.sh
 
-if ! mount | grep -q WL-SL ; then
-    echo -e "${RED}The mount /Volumes/WL-SL/ not available${NC}"
+if ! mount | grep -q "My Passport for Mac" ; then
+    echo -e "${RED}The mount /Volumes/My Passport for Mac/ not available${NC}"
     exit 1
 fi 
+# if ! mount | grep -q WL-SL ; then
+#     echo -e "${RED}The mount /Volumes/WL-SL/ not available${NC}"
+#     exit 1
+# fi 
 
 # Set the directory to search in (change this to your specific folder)
 # Search the files in Server under .COC/ folder to get the pdf_list_coc.txt
-search_dir="/Volumes/WL-SL/02 Slickline/05 OEM Quality Book/.COC/"
+search_dir="/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/02 Slickline/05 OEM Quality Book/.COC/"
 
 # Set the output file
 output_file="pdf_list_coc.txt"

@@ -1,18 +1,22 @@
 #!/usr/bin/env bash
 source /usr/local/bin/bash_colors.sh
 
-if ! mount | grep -q WL-SL ; then
-    echo -e "The mount ${RED}/Volumes/WL-SL/${NC} not available"
+# if ! mount | grep -q WL-SL ; then
+#     echo -e "The mount ${RED}/Volumes/WL-SL/${NC} not available"
+#     exit 1
+# fi 
+if ! mount | grep -q "My Passport for Mac" ; then
+    echo -e "${RED}The mount /Volumes/My Passport for Mac/ not available${NC}"
     exit 1
 fi 
 
 # Set the directory to search in (change this to your specific folder)
-search_dir_2024="/Volumes/WL-SL/02 Slickline/01 Jobs/BECL BP/Unit1/Daily Report/2024/"
-search_dir2_2024="/Volumes/WL-SL/02 Slickline/01 Jobs/BECL BP/Unit2/Daily Report/2024/"
-search_dir_2025="/Volumes/WL-SL/02 Slickline/01 Jobs/BECL BP/Unit1/Daily Report/2025/"
-search_dir2_2025="/Volumes/WL-SL/02 Slickline/01 Jobs/BECL BP/Unit2/Daily Report/2025/"
-search_dir_2026="/Volumes/WL-SL/02 Slickline/01 Jobs/BECL BP/Unit1/Daily Report/2026/"
-search_dir2_2026="/Volumes/WL-SL/02 Slickline/01 Jobs/BECL BP/Unit2/Daily Report/2026/"
+search_dir_2024="/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/02 Slickline/01 Jobs/BECL BP/Unit1/Daily Report/2024/"
+search_dir2_2024="/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/02 Slickline/01 Jobs/BECL BP/Unit2/Daily Report/2024/"
+search_dir_2025="/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/02 Slickline/01 Jobs/BECL BP/Unit1/Daily Report/2025/"
+search_dir2_2025="/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/02 Slickline/01 Jobs/BECL BP/Unit2/Daily Report/2025/"
+search_dir_2026="/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/02 Slickline/01 Jobs/BECL BP/Unit1/Daily Report/2026/"
+search_dir2_2026="/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/02 Slickline/01 Jobs/BECL BP/Unit2/Daily Report/2026/"
 
 
 # Set the output file for 2024

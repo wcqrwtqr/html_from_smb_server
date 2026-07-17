@@ -24,8 +24,8 @@ remove-files_text:
 	cat ./header_personnel_register_tag.html ../partial-html_body/nav_tag.html \
 	./table_tag.html ./personnel_table.html ./part2.html > ./final_personnel_page.html
 	@echo "Removed pdf_list_list_db.txt after finish"
-	rm -f /Volumes/WL-SL/Webpage/personnel_register.html
-	cp ./final_personnel_page.html /Volumes/WL-SL/Webpage/personnel_register.html
+	rm -f "/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/Webpage/personnel_register.html"
+	cp ./final_personnel_page.html "/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/Webpage/personnel_register.html"
 	@echo "remove webpage Personnel_register.html from server and replace it"
 	@echo "=============================================================="
 	@echo "==============Personnel UPDATED IN WEBPAGE===================="

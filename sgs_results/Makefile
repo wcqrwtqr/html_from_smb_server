@@ -41,8 +41,8 @@ remove-files_text:
 	rm -f ./pdf_list_sgs_results_2026.txt 
 	@echo "Removed pdf_list_sgs_results_2026.txt after finish"
 
-	rm -f /Volumes/WL-SL/Webpage/sgs_results_u1.html
-	cp ./sgs_results_u1__catted.html /Volumes/WL-SL/Webpage/sgs_results_u1.html
+	rm -f "/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/Webpage/sgs_results_u1.html"
+	cp ./sgs_results_u1__catted.html  "/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/Webpage/sgs_results_u1.html"
 	@echo "remove webpage all-certificate.html from server and replace it"
 	@echo "=============================================================="
 	@echo "===============SGS DATA UPDATED IN WEBPAGE===================="

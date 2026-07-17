@@ -4,19 +4,23 @@ source /usr/local/bin/bash_colors.sh
 # What is the code doing while this lag
 # Set the directory to search in (change this to your specific folder)
 
-if ! mount | grep -q WL-SL ; then
-    echo -e "${RED}The mount /Volumes/WL-SL/ not available${NC}"
+# if ! mount | grep -q WL-SL ; then
+#     echo -e "${RED}The mount /Volumes/WL-SL/ not available${NC}"
+#     exit 1
+# fi 
+if ! mount | grep -q "My Passport for Mac" ; then
+    echo -e "${RED}The mount /Volumes/My Passport for Mac/ not available${NC}"
     exit 1
 fi 
 
 output_file_2024="pdf_list_sgs_results_2024.txt"
 output_file_2025="pdf_list_sgs_results_2025.txt"
-search_dir_u12024="/Volumes/WL-SL/02 Slickline/01 Jobs/BECL BP/Unit1/Daily Report/2024/"
-search_dir_u22024="/Volumes/WL-SL/02 Slickline/01 Jobs/BECL BP/Unit2/Daily Report/2024/"
-search_dir_u12025="/Volumes/WL-SL/02 Slickline/01 Jobs/BECL BP/Unit1/Daily Report/2025/"
-search_dir_u22025="/Volumes/WL-SL/02 Slickline/01 Jobs/BECL BP/Unit2/Daily Report/2025/"
-search_dir_u12026="/Volumes/WL-SL/02 Slickline/01 Jobs/BECL BP/Unit1/Daily Report/2026/"
-search_dir_u22026="/Volumes/WL-SL/02 Slickline/01 Jobs/BECL BP/Unit2/Daily Report/2026/"
+search_dir_u12024="/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/02 Slickline/01 Jobs/BECL BP/Unit1/Daily Report/2024/"
+search_dir_u22024="/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/02 Slickline/01 Jobs/BECL BP/Unit2/Daily Report/2024/"
+search_dir_u12025="/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/02 Slickline/01 Jobs/BECL BP/Unit1/Daily Report/2025/"
+search_dir_u22025="/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/02 Slickline/01 Jobs/BECL BP/Unit2/Daily Report/2025/"
+search_dir_u12026="/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/02 Slickline/01 Jobs/BECL BP/Unit1/Daily Report/2026/"
+search_dir_u22026="/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/02 Slickline/01 Jobs/BECL BP/Unit2/Daily Report/2026/"
 
 # Data for    2024
 # These files will be resued as we don't need to loop over them every time
@@ -34,6 +38,7 @@ if [[ ! -s "$output_file_2024" ]]; then
     echo "Done generating 2024 SGS results"
 fi 
 # Data for    2024
+# 
 # Check for 2025 data 
 if [[ ! -s "$output_file_2025" ]]; then
     echo "2025 file is not available... run script to generate it"

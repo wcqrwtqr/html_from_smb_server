@@ -9,7 +9,8 @@
 .PHONY: run-all remove-files remove-files_text
 
 # Target to run all scripts in sequence
-run-all: remove-files 01_get_paths_personnel_certificate 02_generate_html_soc_approval 03_sed_on_html_soc_approval
+run-all: remove-files 01_get_paths_personnel_certificate \
+	02_generate_html_soc_approval 03_sed_on_html_soc_approval
 	@echo "Running all scripts in sequence..."
 	./01_get_paths_soc_approval.sh
 	./02_generate_html_soc_approval.sh
@@ -40,8 +41,8 @@ remove-files_text:
 	rm -f ./pdf_list_soc_approval.txt 
 	@echo "Removed pdf_list_soc_approval.txt after finish"
 
-	rm -f /Volumes/WL-SL/Webpage/soc_approval.html
-	cp ./soc_approval__catted.html /Volumes/WL-SL/Webpage/soc_approval.html
+	rm -f "/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/Webpage/soc_approval.html"
+	cp ./soc_approval__catted.html "/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/Webpage/soc_approval.html"
 	@echo "remove webpage all-certificate.html from server and replace it"
 	@echo "=============================================================="
 	@echo "===============SOC APPROVAL UPDATED IN WEBPAGE================"

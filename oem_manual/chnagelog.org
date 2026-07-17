@@ -1,0 +1,4 @@
+#+title: Changelog
+
+* <2026-02-26 Thu> Last day in NEOS, stopped updating
+* <2026-07-17 Fri> This will remain unchanged

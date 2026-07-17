@@ -3,7 +3,8 @@ source /usr/local/bin/bash_colors.sh
 
 
 # Set the directory to search in (change this to your specific folder)
-search_dir="/Users/mohammedalbatati/Downloads/Missing utm/COC/"
+# search_dir="/Users/mohammedalbatati/Downloads/Missing utm/COC/"
+search_dir="/Users/mohammedalbatati/Downloads/Obselete folder/NEOS FILES/NOV COC files/COC/"
 
 # Set the output file
 output_file="dict_coc_desc.txt"
@@ -32,7 +33,8 @@ fi
 
 # Attempt to run the sed command
 # Here we remove the path of my mac and return only the SN and the file name
-if ! sed -i '' 's|/Users/mohammedalbatati/Downloads/Missing utm/COC/||g' ./dict_coc_desc.txt; then
+# if ! sed -i '' 's|/Users/mohammedalbatati/Downloads/Missing utm/COC/||g' ./dict_coc_desc.txt; then
+if ! sed -i '' 's|/Users/mohammedalbatati/Downloads/Obselete folder/NEOS FILES/NOV COC files/COC/||g' ./dict_coc_desc.txt; then
     # sed returned a non-zero exit status, indicating an error
     echo "Error: sed failed to modify 'output_coc.html'." >&2
     echo "Possible reasons:" >&2

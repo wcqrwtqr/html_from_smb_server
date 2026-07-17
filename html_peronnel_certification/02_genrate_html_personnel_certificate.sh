@@ -6,7 +6,9 @@ input_file="pdf_list_personnel.txt"
 output_file="output_personnel_certificate.html"
 
 if [[ ! -f "$input_file" ]] ; then
-    echo -e "The file ${RED}pdf_list_personnel.txt generated from ./01_get_paths_personnel_certificate.sh${NC} was not ran"
+    echo -e "The file ${RED}pdf_list_personnel.txt generated from \
+    ./01_get_paths_personnel_certificate.sh${NC} was not ran"
+
     exit 1
 fi
 

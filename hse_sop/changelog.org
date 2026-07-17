@@ -1,0 +1,5 @@
+#+title: Changelog
+
+* <2026-02-26 Thu> Last day in NEOS, stopped updating
+* <2026-07-17 Fri> Changed the path of the smb server to my HDD
+* I removed the rsync command as I don't need it for my HDD

@@ -8,10 +8,10 @@
 .PHONY: run-all remove-files remove-files_text
 
 # Target to run all scripts in sequence
-run-all: remove-files 00_rsync_form_qhse 01_get_paths_form_qhse \
+run-all: remove-files 01_get_paths_form_qhse \
 	02_generate_html_form_qhse 03_sed_on_html_form_qhse
 	@echo "Running all scripts in sequence..."
-	./00_rsync_form_qhse.sh
+	# ./00_rsync_form_qhse.sh
 	./01_get_paths_form_qhse.sh
 	./02_generate_html_form_qhse.sh
 	./03_sed_on_html_form_qhse.sh
@@ -24,8 +24,8 @@ remove-files:
 	@echo "Removed txt and html files"
 
 # Targets for each individual script
-00_rsync_form_qhse:
-	chmod +x ./00_rsync_form_qhse.sh
+# 00_rsync_form_qhse:
+# 	chmod +x ./00_rsync_form_qhse.sh
 
 01_get_paths_form_qhse:
 	chmod +x ./01_get_paths_form_qhse.sh
@@ -44,8 +44,8 @@ remove-files_text:
 
 	rm -f ./pdf_list_form_qhse.txt ./output_form_qhse.html
 	@echo -e "Removed pdf_list_form_qhse.txt after finish"
-	rm -f /Volumes/WL-SL/Webpage/form_qhse.html
-	cp ./form_qhse__catted.html /Volumes/WL-SL/Webpage/form_qhse.html
+	rm -f "/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/Webpage/form_qhse.html"
+	cp ./form_qhse__catted.html "/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/Webpage/form_qhse.html"
 	@echo "remove webpage HSE SOP updated.html from server and replace it"
 	@echo "=============================================================="
 	@echo "=============HSE SOP UPDATED IN WEBPAGE======================="

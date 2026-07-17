@@ -4,10 +4,10 @@
 # pages needed.
 
 # Define each subdirectory
-SUBDIRS = roo_sqb html_roo_final_report html_sls_certifcate html_coc \
-html_pce_ms  html_peronnel_certification  work_approval \
-main_page sgs_results ims_sop soc_approval roo_sop hse_sop \
-form_wl-sl form_qhse oem_manual html_asset_register html_personnel_register
+SUBDIRS = roo_sqb html_roo_final_report html_sls_certifcate sgs_results \
+hse_sop html_coc html_pce_ms html_peronnel_certification html_personnel_register \
+roo_sop ims_sop work_approval html_asset_register main_page form_qhse form_wl-sl \
+soc_approval oem_manual  
 
 # Default target to build all subdirectories
 all: $(SUBDIRS) ## Runa all make command in mentioned folders

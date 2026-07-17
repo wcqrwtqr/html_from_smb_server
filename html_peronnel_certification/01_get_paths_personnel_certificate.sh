@@ -3,11 +3,11 @@ source /usr/local/bin/bash_colors.sh
 
 # What is the code doing while this lag
 # Set the directory to search in (change this to your specific folder)
-if [[ ! -d "/Volumes/WL-SL/02 Slickline/.Personnel/" ]]; then
+if [[ ! -d "/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/02 Slickline/.Personnel/" ]]; then
     echo -e "${RED}The folder .Personnel is not available${NC}"
     exit 1
 fi
-search_dir="/Volumes/WL-SL/02 Slickline/.Personnel/"
+search_dir="/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/02 Slickline/.Personnel/"
 
 # Set the output file
 output_file="pdf_list_personnel.txt"

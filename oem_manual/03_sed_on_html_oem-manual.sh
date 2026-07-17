@@ -8,7 +8,7 @@ if [ ! -f "./output_oem-manual.html" ]; then
 fi
 
 # Attempt to run the sed command
-if ! sed -i '' 's|/Volumes/WL-SL|..|g' ./output_oem-manual.html; then
+if ! sed -i '' 's|/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL|..|g' ./output_oem-manual.html; then
     # sed returned a non-zero exit status, indicating an error
     echo "Error: sed failed to modify './output_oem-manual.html'." >&2
     echo "Possible reasons:" >&2
