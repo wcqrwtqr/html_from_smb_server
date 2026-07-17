@@ -20,24 +20,37 @@ row_number=1
 
     # Loop through each line in the input file
     while IFS=, read -r p_max t_max duration pdf_path unit_no; do
-        # Extract the date of the sgs
-        sgs_date=$(echo "$pdf_path" | awk -F_ '{print $NF}' | cut -d "." -f 1)
-        sgs_well=$(echo "$pdf_path"| awk -F"/" '{print $10}' | cut -d "_" -f 2)
-        dur_hr=$(echo $(($duration / 3600)))
+
+        # This code is optimized code suggested from Gemini as my previous code
+        # was calling for echo, awk, cut repeatedly 
+        # 1. Get the filename from the path
+        filename="${pdf_path##*/}"
+        
+        # 2. Extract Date: Last underscore + remove extension (assuming 8-digit date)
+        # R-671_SGS Data_8700_Top_20241019.txt -> 20241019
+        raw_date="${filename%.*}"
+        raw_date="${raw_date##*_}"
+        sgs_date="${raw_date:0:4}-${raw_date:4:2}-${raw_date:6:2}"
+
+        # 3. Extract Well: The part before the first underscore in the filename
+        sgs_well="${filename%%_*}"
+
+        # 4. Math: Use $(( )) directly
+        dur_hr=$(( duration / 3600 ))
 
         # Output the formatted HTML row
-        echo "  <tr>"
-        echo "    <th scope=\"row\">$row_number</th>"
-        echo "    <td>$sgs_well</td>"
-        echo "    <td>$sgs_date</td>"
-        echo "    <td>$p_max</td>"
-        echo "    <td>$t_max</td>"
-        echo "    <td>$dur_hr</td>"
-        echo "    <td>$unit_no</td>"
-        # TODO : try to make the link for the direcotry intead of the file itself
-        echo "    <td><a href=\"$pdf_path\" target=\"_blank\">link</a></td>"
-        echo "  </tr>"
-
+        cat <<EOF
+        <tr>
+            <th scope="row">$row_number</th>
+            <td>$sgs_well</td>
+            <td>$sgs_date</td>
+            <td>$p_max</td>
+            <td>$t_max</td>
+            <td>$dur_hr</td>
+            <td>$unit_no</td>
+            <td><a href="$pdf_path" target="_blank">link</a></td>
+        </tr>
+EOF
         # Increment the row counter
         ((row_number++))
     done <"$input_file_u1"
