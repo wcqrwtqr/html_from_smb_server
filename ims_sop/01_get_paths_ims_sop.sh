@@ -21,7 +21,7 @@ search_dir="/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/02 Slickline/.
 output_file="pdf_list_ims_sop.txt"
 
 # Clear the output file if it already exists
->"$output_file"
+: >"$output_file"
 
 # Build the find command with dynamic exclusions
 find_cmd="find \"$search_dir\" -type f -name \"NE-SL-SOP*\""

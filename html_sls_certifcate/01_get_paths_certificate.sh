@@ -19,7 +19,7 @@ output_file="pdf_list_certificate.txt"
 # excluded_words="IMS|repair|backup|test|draft|test|logbook|purtitystickstoff_en|Software|test|test2|LogBook"
 
 # Clear the output file if it already exists
->"$output_file"
+: >"$output_file"
 
 # Build the find command with dynamic exclusions
 find_cmd="find \"$search_dir\" -type f -name \"EXP*.pdf\" -not -path \"*/EXPIRED/*\""

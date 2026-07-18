@@ -4,6 +4,11 @@ source /usr/local/bin/bash_colors.sh
 # Date: 20260213
 # Extract the forms qhse from the folder .dot-files/form_qhse and generate the
 # txt file to be converted to html
+# 
+# Purpose: Generates a manifest file of all NE-QHSE PDF documents.
+# The script scans the QHSE directory for files matching "NE-QHSE*.pdf",
+# extracts their filenames and absolute paths, and writes them to 
+# "pdf_list_form_qhse.txt" for use in HTML conversion workflows.
  
 search_dir="/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/02 Slickline/.dot-files/form_qhse/"
 
@@ -17,7 +22,7 @@ fi
 output_file="pdf_list_form_qhse.txt"
 
 # Clear the output file if it already exists
->"$output_file"
+: >"$output_file"
 
 # Build the find command with dynamic exclusions
 find_cmd="find \"$search_dir\" -type f -name \"NE-QHSE*.pdf\""
@@ -35,3 +40,4 @@ eval "$find_cmd" | while read -r file; do
 done
 
 echo -e "${YELLOW}Results have been saved to $output_file${NC}"
+

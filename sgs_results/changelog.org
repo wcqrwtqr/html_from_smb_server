@@ -1,0 +1,5 @@
+#+title: Changelog
+
+* <2026-02-26 Thu> Last day in NEOS, stopped updating
+* <2026-07-17 Fri> Changed the path of the smb server to my HDD
+* Repalced the loop for html genreator to use EOF which made the code faster

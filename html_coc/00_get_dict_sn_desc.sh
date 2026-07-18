@@ -10,7 +10,7 @@ search_dir="/Users/mohammedalbatati/Downloads/Obselete folder/NEOS FILES/NOV COC
 output_file="dict_coc_desc.txt"
 
 # Clear the output file if it already exists
->"$output_file"
+: >"$output_file"
 
 # Recursively find all .pdf files and process them from both directories
 # Search my Downloads folder for all the COC so we can make the dictionary

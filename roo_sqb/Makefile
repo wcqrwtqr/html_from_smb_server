@@ -10,41 +10,34 @@
 
 # Target to run all scripts in sequence
 run-all: remove-files 01_get_paths 02_genrate_html 03_sed_on_html
-	@echo "Running all scripts in sequence..."
-	./01_get_paths.sh
-	./02_genrate_html_td.sh
-	./03_sed_on_html_sls.sh
-	@echo "All scripts completed."
-	$(MAKE) remove-files_text  # Call remove-files_text after scripts
+	@gum style --foreground 208 --border thick --padding "0 2" "ROO SQB Pipeline"
+	@gum spin --spinner jump --title "Running sequence..." -- bash -c \
+		"./01_get_paths.sh && ./02_genrate_html_td.sh && ./03_sed_on_html_sls.sh"
+	@$(MAKE) remove-files_text
+	@gum style --foreground 85 --border rounded "ROO SQB updated successfully."
 
 # Target to remove specific files before starting the scripts
 remove-files:
-	rm -f ./output_roo_sqb.html ./pdf_list_roo_sqb.txt
-	@echo "Removed txt and html files"
+	@rm -f ./output_roo_sqb.html ./pdf_list_roo_sqb.txt
+	@gum log --level info "Cleaning working directory..."
 
 # Targets for each individual script
 01_get_paths:
-	chmod +x ./01_get_paths.sh
+	@chmod +x ./01_get_paths.sh
 
 02_genrate_html:
-	chmod +x ./02_genrate_html_td.sh
+	@chmod +x ./02_genrate_html_td.sh
 
 03_sed_on_html:
-	chmod +x ./03_sed_on_html_sls.sh
+	@chmod +x ./03_sed_on_html_sls.sh
 
 # Target to remove specific files before starting the scripts
 remove-files_text:
+	@gum spin --spinner points --title "Deploying to server..." -- bash -c "\
 	cat ./header_sqb_tag.html ../partial-html_body/nav_tag.html \
-	./table_sqb_tag.html ./output_roo_sqb.html \
-	./part2.html > catted_sqb.html
-	rm -f ./pdf_list_roo_sqb.txt ./output_roo_sqb.html
-	@echo "Removed pdf_list_sls.txt after finish"
-	rm -f "/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/Webpage/ROO-SQB.html"
-	cp ./catted_sqb.html  "/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/Webpage/ROO-SQB.html" 
-	@echo "Removed the webpage sls_sqb.html and coppied the updated file in its place"
-	@echo "=============================================================="
-	@echo "==================SQB UPDATED IN WEBPAGE======================"
-	@echo "=============================================================="
-
+	./table_sqb_tag.html ./output_roo_sqb.html ./part2.html > catted_sqb.html && \
+	rm -f ./pdf_list_roo_sqb.txt ./output_roo_sqb.html && \
+	rm -f '/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/Webpage/ROO-SQB.html' && \
+	cp ./catted_sqb.html  '/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/Webpage/ROO-SQB.html'"
 
 

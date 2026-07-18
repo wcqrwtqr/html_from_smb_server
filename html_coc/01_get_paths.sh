@@ -18,7 +18,7 @@ search_dir="/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/02 Slickline/0
 output_file="pdf_list_coc.txt"
 
 # Clear the output file if it already exists
->"$output_file"
+: >"$output_file"
 
 # Recursively find all .pdf files and process them from both directories
 for search_directory in "$search_dir"; do

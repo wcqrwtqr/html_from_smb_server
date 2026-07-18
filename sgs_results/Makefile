@@ -10,41 +10,30 @@
 
 # Target to run all scripts in sequence
 run-all: remove-files 01_get_paths_sgs_results 02_genrate_html_sgs_results 03_sed_on_html_sgs_results
-	@echo "Running all scripts in sequence..."
-	./01_get_paths_sgs_results.sh
-	./02_genrate_html_sgs_results.sh
-	./03_sed_on_html_sgs_results.sh
-	@echo "All scripts completed."
-	$(MAKE) remove-files_text  # Call remove-files_text after scripts
+	@gum style --foreground 212 --bold "Starting SGS Results HTML Pipeline..."
+	@gum spin --spinner dot --title "Processing SGS scripts..." -- bash -c \
+		"./01_get_paths_sgs_results.sh && ./02_genrate_html_sgs_results.sh && ./03_sed_on_html_sgs_results.sh"
+	@$(MAKE) remove-files_text
+	@gum style --foreground 46 --border rounded "Pipeline Complete! SGS Data updated on Server."
 
 # Target to remove specific files before starting the scripts
 remove-files:
-	rm -f ./output_sgs_results_u1.html ./pdf_list_sgs_results_2026.txt
-	@echo "Removed txt and html files"
+	@rm -f ./output_sgs_results_u1.html ./pdf_list_sgs_results_2026.txt
+	@gum log --level info "Cleaning working directory..."
 
 # Targets for each individual script
 01_get_paths_sgs_results:
-	chmod +x ./01_get_paths_sgs_results.sh
+	@chmod +x ./01_get_paths_sgs_results.sh
 
 02_genrate_html_sgs_results:
-	chmod +x ./02_genrate_html_sgs_results.sh
+	@chmod +x ./02_genrate_html_sgs_results.sh
 
 03_sed_on_html_sgs_results:
-	chmod +x ./03_sed_on_html_sgs_results.sh
+	@chmod +x ./03_sed_on_html_sgs_results.sh
 
-# Target to remove specific files before starting the scripts
 remove-files_text:
-	cat ./header_sgs_results_u1_tag.html ../partial-html_body/nav_tag.html \
-	./table_tag.html ./output_sgs_results_u1.html \
-	./part2.html > ./sgs_results_u1__catted.html
-
-	rm -f ./pdf_list_sgs_results_2026.txt 
-	@echo "Removed pdf_list_sgs_results_2026.txt after finish"
-
-	rm -f "/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/Webpage/sgs_results_u1.html"
-	cp ./sgs_results_u1__catted.html  "/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/Webpage/sgs_results_u1.html"
-	@echo "remove webpage all-certificate.html from server and replace it"
-	@echo "=============================================================="
-	@echo "===============SGS DATA UPDATED IN WEBPAGE===================="
-	@echo "=============================================================="
-
+	@gum spin --spinner line --title "Assembling and deploying to server..." -- bash -c "\
+		cat ./header_sgs_results_u1_tag.html ../partial-html_body/nav_tag.html \
+		./table_tag.html ./output_sgs_results_u1.html ./part2.html > ./sgs_results_u1__catted.html && \
+		rm -f ./pdf_list_sgs_results_2026.txt && \
+		cp ./sgs_results_u1__catted.html '/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/Webpage/sgs_results_u1.html'"

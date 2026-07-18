@@ -18,7 +18,7 @@ search_dir="/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/02 Slickline/0
 output_file="pdf_list_oem.txt"
 
 # Clear the output file if it already exists
->"$output_file"
+: >"$output_file"
 
 # Recursively find all .pdf files and process them
 find "$search_dir" -type f -name "*.pdf" | while read -r file; do

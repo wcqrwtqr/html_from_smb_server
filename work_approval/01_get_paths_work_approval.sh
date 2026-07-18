@@ -1,19 +1,19 @@
 #!/usr/bin/env bash
 source /usr/local/bin/bash_colors.sh
 
-if ! mount | grep -q WL-SL ; then
-    echo -e "The mount /Volumes/WL-SL/ not available"
+if ! mount | grep -q "My Passport for Mac" ; then
+    echo -e "${RED}The mount /Volumes/My Passport for Mac/ not available${NC}"
     exit 1
 fi 
 
 # What is the code doing while this lag
-search_dir="/Volumes/WL-SL/05 WORK APPROVAL/موافقة عمل/BECL/"
+search_dir="/Volumes/My Passport for Mac/NEOS/Server Backup/WL-SL/05 WORK APPROVAL/موافقة عمل/BECL/"
 
 # Set the output file
 output_file="pdf_list_work_approval.txt"
 
 # Clear the output file if it already exists
->"$output_file"
+: >"$output_file"
 
 # Build the find command with dynamic exclusions
 # find_cmd="find \"$search_dir\" -type f -name \"[0-9][0-9][0-9][0-9]*\" -not -path \"*/EXPIRED/*\""
